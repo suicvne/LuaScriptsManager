@@ -106,14 +106,14 @@ namespace Gtktester
 
             LoadNeededInfo();
 
-            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, formatted);
-            md.Run();
-            md.Destroy();
+            //MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, formatted);
+            //md.Run();
+            //md.Destroy();
         }
 
         private void LoadNeededInfo()
         {
-            this.scriptTitleLabel.Text = __title;
+            this.scriptTitleLabel.Text = String.Format("{0} by {1}", __title, __author);
             this.descriptionLabel.Text = __description;
             this.usagePreview.Buffer.Text = this.m.UsageExample;
         }

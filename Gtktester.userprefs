@@ -1,11 +1,10 @@
-﻿<Properties StartupItem="Gtktester/Gtktester.csproj">
+﻿<Properties StartupItem="Gtktester\Gtktester.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester\InformationView.cs">
     <Files>
-      <File FileName="Gtktester/Program.cs" Line="1" Column="1" />
-      <File FileName="Gtktester/InformationView.cs" Line="117" Column="56" />
-      <File FileName="Gtktester/MainWindow.cs" Line="18" Column="24" />
-      <File FileName="../../../../usr/lib/mono/4.5/Microsoft.Common.targets" Line="13" Column="4" />
+      <File FileName="Gtktester\Program.cs" Line="1" Column="1" />
+      <File FileName="Gtktester\InformationView.cs" Line="111" Column="15" />
+      <File FileName="Gtktester\MainWindow.cs" Line="10" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

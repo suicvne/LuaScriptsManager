@@ -112,10 +112,11 @@
               <widget class="Gtk.Button" id="button1">
                 <property name="MemberName" />
                 <property name="WidthRequest">185</property>
+                <property name="HeightRequest">48</property>
                 <property name="CanFocus">True</property>
                 <property name="Type">TextAndIcon</property>
                 <property name="Icon">stock:gtk-add Menu</property>
-                <property name="Label" translatable="yes">Install Module</property>
+                <property name="Label" translatable="yes">Install</property>
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
@@ -139,9 +140,10 @@
             <child>
               <widget class="Gtk.Button" id="button2">
                 <property name="MemberName" />
+                <property name="HeightRequest">48</property>
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
+                <property name="Label" translatable="yes">Visit Website</property>
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
@@ -157,6 +159,7 @@
             <property name="AutoSize">False</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
+            <property name="Padding">5</property>
           </packing>
         </child>
       </widget>
