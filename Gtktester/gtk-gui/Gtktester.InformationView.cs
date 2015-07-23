@@ -5,9 +5,13 @@ namespace Gtktester
 	public partial class InformationView
 	{
 		private global::Gtk.VBox vbox1;
+		
 		private global::Gtk.Label scriptTitleLabel;
+		
 		private global::Gtk.Label descriptionLabel;
+		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
+		
 		private global::Gtk.TextView usagePreview;
 
 		protected virtual void Build ()
