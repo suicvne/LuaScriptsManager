@@ -53,7 +53,7 @@
       <placeholder />
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="Gtktester.InformationView" design-size="576 316">
+  <widget class="Gtk.Bin" id="Gtktester.InformationView" design-size="452 316">
     <property name="MemberName" />
     <property name="Visible">False</property>
     <child>
@@ -113,8 +113,9 @@
                 <property name="MemberName" />
                 <property name="WidthRequest">185</property>
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-add Menu</property>
+                <property name="Label" translatable="yes">Install Module</property>
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
