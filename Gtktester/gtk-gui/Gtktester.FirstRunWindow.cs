@@ -4,19 +4,67 @@ namespace Gtktester
 {
 	public partial class FirstRunWindow
 	{
+		private global::Gtk.VBox vbox2;
+		
+		private global::Gtktester.FirstRunWidget firstrunwidget1;
+		
+		private global::Gtk.HBox hbox1;
+		
+		private global::Gtk.Button nextButton;
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget Gtktester.FirstRunWindow
+			this.WidthRequest = 570;
 			this.Name = "Gtktester.FirstRunWindow";
-			this.Title = global::Mono.Unix.Catalog.GetString ("FirstRunWindow");
-			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.Title = "";
+			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
+			this.WindowPosition = ((global::Gtk.WindowPosition)(3));
+			this.Resizable = false;
+			this.AllowGrow = false;
+			// Container child Gtktester.FirstRunWindow.Gtk.Container+ContainerChild
+			this.vbox2 = new global::Gtk.VBox ();
+			this.vbox2.Name = "vbox2";
+			this.vbox2.Spacing = 6;
+			// Container child vbox2.Gtk.Box+BoxChild
+			this.firstrunwidget1 = new global::Gtktester.FirstRunWidget ();
+			this.firstrunwidget1.Events = ((global::Gdk.EventMask)(256));
+			this.firstrunwidget1.Name = "firstrunwidget1";
+			this.vbox2.Add (this.firstrunwidget1);
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.firstrunwidget1]));
+			w1.Position = 0;
+			w1.Expand = false;
+			w1.Fill = false;
+			// Container child vbox2.Gtk.Box+BoxChild
+			this.hbox1 = new global::Gtk.HBox ();
+			this.hbox1.Name = "hbox1";
+			this.hbox1.Spacing = 6;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.nextButton = new global::Gtk.Button ();
+			this.nextButton.WidthRequest = 102;
+			this.nextButton.CanFocus = true;
+			this.nextButton.Name = "nextButton";
+			this.nextButton.UseUnderline = true;
+			this.nextButton.Label = global::Mono.Unix.Catalog.GetString ("Next");
+			this.hbox1.Add (this.nextButton);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.nextButton]));
+			w2.Position = 2;
+			w2.Expand = false;
+			w2.Fill = false;
+			this.vbox2.Add (this.hbox1);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox1]));
+			w3.Position = 1;
+			w3.Expand = false;
+			w3.Fill = false;
+			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 600;
+			this.DefaultHeight = 315;
 			this.Show ();
+			this.nextButton.Clicked += new global::System.EventHandler (this.OnNextButtonClicked);
 		}
 	}
 }

@@ -8,7 +8,7 @@
     <RootNamespace>Gtktester</RootNamespace>
     <AssemblyName>Gtktester</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <StartupObject>Gtktester.MainClass</StartupObject>
+    <StartupObject>Gtktester.Program</StartupObject>
     <ApplicationIcon>Icons\ico.ico</ApplicationIcon>
     <ReleaseVersion>0.7.0.2</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
@@ -77,6 +77,11 @@
     <Compile Include="LuaModules.cs" />
     <Compile Include="InformationView.cs" />
     <Compile Include="gtk-gui\Gtktester.InformationView.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="FirstRunWidget.cs" />
+    <Compile Include="gtk-gui\Gtktester.FirstRunWidget.cs" />
+    <Compile Include="AskForLunaLuaWidget.cs" />
+    <Compile Include="gtk-gui\Gtktester.AskForLunaLuaWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -5,50 +5,41 @@ using Newtonsoft.Json;
 
 namespace Gtktester
 {
-	class MainClass
+    public class Program
 	{
-        //public static SettingsObject SettingsInstance;
+        public static Settings ProgramSettings = new Settings();
 
 		public static void Main (string[] args)
 		{
-            /*Lua l = new Lua();
-            StreamReader sr = new StreamReader(@"C:\Users\Mike\Desktop\SMBX\LuaScriptsLib\deathcounter.lua");
+            Application.Init();
 
-            string metadata = "";
-            for (int i = 0; i < 4; i++)
+            if (File.Exists(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))
             {
-                metadata += sr.ReadLine();
-            }
-            l.DoString(metadata);
-            var author = l.Context.Get("__author").AsString();
-
-
-            Console.WriteLine(author.ToString());*/
-			Application.Init ();
-			MainWindow win = new MainWindow ();
-			win.Show ();
-			Application.Run ();
-		}
-
-        /*
-		public static void LoadSettings()
-		{
-            if (File.Exists(InternalValues.SettingsPath))
-            {
-                JsonSerializer js = new JsonSerializer();
-                js.Formatting = Formatting.Indented;
-                using (StreamReader sr = new StreamReader(InternalValues.SettingsPath))
-                {
-                    using (JsonReader jsr = new JsonReader(sr))
-                    {
-                        SettingsInstance = js.Deserialize<SettingsObject>(jsr);
-                    }
-                }
+                MainWindow mw = new MainWindow();
+                mw.Show();
             }
             else
             {
-                SettingsInstance = SettingsObject();
-                SettingsInstance.XmlDatabaseUrl = "";
+                FirstRunWindow win = new FirstRunWindow();
+                win.Show ();
+            }
+			Application.Run ();
+		}
+
+
+		public static void LoadSettings()
+		{
+            if (File.Exists(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))
+            {
+                JsonSerializer js = new JsonSerializer();
+                js.Formatting = Formatting.Indented;
+                using (StreamReader sr = new StreamReader(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))
+                {
+                    using (JsonReader jsr = new JsonTextReader(sr))
+                    {
+                        ProgramSettings = js.Deserialize<Settings>(jsr);
+                    }
+                }
             }
 		}
 
@@ -57,15 +48,14 @@ namespace Gtktester
             JsonSerializer js = new JsonSerializer();
             js.Formatting = Formatting.Indented;
 
-            using(StreamWriter sw = new StreamWriter(InternalValues.SettingsPath))
+            using(StreamWriter sw = new StreamWriter(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))
             {
                 using(JsonWriter jsw = new JsonTextWriter(sw))
                 {
-                    js.Serialize(jsw, SettingsInstance);
+                    js.Serialize(jsw, ProgramSettings);
                 }
             }
 		}
-*/
 
 	}
 }
