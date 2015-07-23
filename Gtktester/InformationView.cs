@@ -32,7 +32,7 @@ namespace Gtktester
         {
             Pango.FontDescription desc = new Pango.FontDescription();
             desc.Family = "Sans";
-            desc.Size = 32;
+            desc.Size = (int)(20 * Pango.Scale.PangoScale);
             desc.Weight = Pango.Weight.Normal;
             scriptTitleLabel.ModifyFont(desc);
             scriptTitleLabel.SetAlignment(0, 0);
@@ -104,9 +104,18 @@ namespace Gtktester
                 "Title: {0}\nAuthor: {1}\nDescription: {2}\nVersion: {3}\nURL: {4}", __title, __author,
                 __description, __version.ToString(), __url.ToString());
 
+            LoadNeededInfo();
+
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, formatted);
             md.Run();
             md.Destroy();
+        }
+
+        private void LoadNeededInfo()
+        {
+            this.scriptTitleLabel.Text = __title;
+            this.descriptionLabel.Text = __description;
+            this.usagePreview.Buffer.Text = this.m.UsageExample;
         }
 
     }
