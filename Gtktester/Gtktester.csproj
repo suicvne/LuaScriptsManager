@@ -55,6 +55,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -82,6 +84,10 @@
     <Compile Include="gtk-gui\Gtktester.FirstRunWidget.cs" />
     <Compile Include="AskForLunaLuaWidget.cs" />
     <Compile Include="gtk-gui\Gtktester.AskForLunaLuaWidget.cs" />
+    <Compile Include="Downloader.cs" />
+    <Compile Include="gtk-gui\Gtktester.Downloader.cs" />
+    <Compile Include="LuaScriptMetadata.cs" />
+    <Compile Include="Unzip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

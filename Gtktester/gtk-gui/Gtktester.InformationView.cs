@@ -16,11 +16,11 @@ namespace Gtktester
 		
 		private global::Gtk.HBox hbox1;
 		
-		private global::Gtk.Button button1;
+		private global::Gtk.Button installUpdateButton;
 		
 		private global::Gtk.Image image2;
 		
-		private global::Gtk.Button button2;
+		private global::Gtk.Button webButton;
 
 		protected virtual void Build ()
 		{
@@ -70,18 +70,18 @@ namespace Gtktester
 			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
 			// Container child hbox1.Gtk.Box+BoxChild
-			this.button1 = new global::Gtk.Button ();
-			this.button1.WidthRequest = 185;
-			this.button1.HeightRequest = 48;
-			this.button1.CanFocus = true;
-			this.button1.Name = "button1";
-			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString ("Install");
+			this.installUpdateButton = new global::Gtk.Button ();
+			this.installUpdateButton.WidthRequest = 185;
+			this.installUpdateButton.HeightRequest = 48;
+			this.installUpdateButton.CanFocus = true;
+			this.installUpdateButton.Name = "installUpdateButton";
+			this.installUpdateButton.UseUnderline = true;
+			this.installUpdateButton.Label = global::Mono.Unix.Catalog.GetString ("Install");
 			global::Gtk.Image w5 = new global::Gtk.Image ();
 			w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.Menu);
-			this.button1.Image = w5;
-			this.hbox1.Add (this.button1);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button1]));
+			this.installUpdateButton.Image = w5;
+			this.hbox1.Add (this.installUpdateButton);
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.installUpdateButton]));
 			w6.Position = 0;
 			w6.Expand = false;
 			w6.Fill = false;
@@ -94,14 +94,14 @@ namespace Gtktester
 			w7.Expand = false;
 			w7.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
-			this.button2 = new global::Gtk.Button ();
-			this.button2.HeightRequest = 48;
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString ("Visit Website");
-			this.hbox1.Add (this.button2);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button2]));
+			this.webButton = new global::Gtk.Button ();
+			this.webButton.HeightRequest = 48;
+			this.webButton.CanFocus = true;
+			this.webButton.Name = "webButton";
+			this.webButton.UseUnderline = true;
+			this.webButton.Label = global::Mono.Unix.Catalog.GetString ("Visit Website");
+			this.hbox1.Add (this.webButton);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.webButton]));
 			w8.Position = 2;
 			w8.Expand = false;
 			w8.Fill = false;
@@ -116,6 +116,8 @@ namespace Gtktester
 				this.Child.ShowAll ();
 			}
 			this.Hide ();
+			this.installUpdateButton.Clicked += new global::System.EventHandler (this.OnInstallUpdateButtonClicked);
+			this.webButton.Clicked += new global::System.EventHandler (this.OnWebButtonClicked);
 		}
 	}
 }

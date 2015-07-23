@@ -2,6 +2,7 @@
 using Gtk;
 using System.IO;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 namespace Gtktester
 {
@@ -9,8 +10,17 @@ namespace Gtktester
 	{
         public static Settings ProgramSettings = new Settings();
 
+        //god i can't even escape these on linux
+        [DllImport ("libX11.so.6")] 
+        static extern int XInitThreads ();
+
 		public static void Main (string[] args)
 		{
+            LoadSettings();
+
+            if (Internals.CurrentOS == InternalOperatingSystem.Linux)
+                XInitThreads();
+
             Application.Init();
 
             if (File.Exists(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))

@@ -42,6 +42,7 @@ namespace Gtktester
                     MessageType.Question, 
                     ButtonsType.YesNo, 
                     "It is highly recommended that you use my PlayOnLinux script for direct support from me\nregarding running LunaLua under Linux.\n\nWould you like to get my PlayOnLinux script? \n(Hitting no will bring you to the manual LunaLua download)");
+                md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
                 int returnVal = md.Run();
                 if (returnVal == -8)
                 {
