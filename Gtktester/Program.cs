@@ -2,7 +2,6 @@
 using Gtk;
 using System.IO;
 using Newtonsoft.Json;
-using NetLua;
 
 namespace Gtktester
 {

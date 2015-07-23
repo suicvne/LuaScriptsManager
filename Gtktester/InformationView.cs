@@ -6,7 +6,6 @@ using Gtk;
 using thing2;
 using System.Collections.Generic;
 using System.Net;
-using NetLua;
 
 namespace Gtktester
 {
@@ -66,7 +65,6 @@ namespace Gtktester
 
         private void ParseMetadata()
         {
-            Lua la = new Lua();
             string[] asLines = LuaScript.Split(new string[]{ "\r\n", "\n"}, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < 5; i++)
             {
