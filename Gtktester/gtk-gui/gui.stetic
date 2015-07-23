@@ -7,9 +7,10 @@
   <import>
     <widget-library name="../bin/Debug/Gtktester.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="675 427">
+  <widget class="Gtk.Window" id="MainWindow" design-size="717 427">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="Title" translatable="yes">Lua Module Manager - v0.0.0.0</property>
+    <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
@@ -45,12 +46,76 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="Gtktester.FirstRunWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="Gtktester.FirstRunWindow" design-size="560 310">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">FirstRunWindow</property>
+    <property name="Title" translatable="yes" />
     <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
     <child>
-      <placeholder />
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">welcomeLabel</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image2">
+            <property name="MemberName" />
+            <property name="HeightRequest">250</property>
+            <property name="Pixbuf">resource:Gtktester.Icons.PNG.256.png</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="nextButton">
+                <property name="MemberName" />
+                <property name="WidthRequest">111</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Next</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
   <widget class="Gtk.Bin" id="Gtktester.InformationView" design-size="452 316">

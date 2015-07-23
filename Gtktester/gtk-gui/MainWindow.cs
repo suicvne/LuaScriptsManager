@@ -16,7 +16,8 @@ public partial class MainWindow
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("Lua Module Manager - v0.0.0.0");
+		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.hpaned2 = new global::Gtk.HPaned ();
@@ -46,7 +47,7 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 675;
+		this.DefaultWidth = 717;
 		this.DefaultHeight = 427;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);

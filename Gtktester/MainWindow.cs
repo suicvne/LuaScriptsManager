@@ -6,6 +6,7 @@ using System.IO;
 using thing2;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -20,6 +21,8 @@ public partial class MainWindow: Gtk.Window
 
     private void OnWindowLoad()
     {
+        this.Title = "LunaLua Module Manager - v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
         using (var client = new WebClient())
         {
             string jsonDatabase = client.DownloadString("http://mrmiketheripper.x10.mx/luamodulemanager/test.json");
