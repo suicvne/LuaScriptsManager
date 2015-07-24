@@ -33,6 +33,7 @@
         <property name="Label" translatable="yes">Settings</property>
         <property name="ShortLabel" translatable="yes">Settings</property>
         <property name="StockId">gtk-preferences</property>
+        <signal name="Activated" handler="OnPreferencesActionActivated" />
       </action>
       <action id="quitAction">
         <property name="Type">Action</property>

@@ -98,6 +98,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.dialogInfoAction.Activated += new global::System.EventHandler (this.OnAbout);
+		this.preferencesAction.Activated += new global::System.EventHandler (this.OnPreferencesActionActivated);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnClosed);
 		this.treeview1.CursorChanged += new global::System.EventHandler (this.treeview_SelectionChanged);
 	}

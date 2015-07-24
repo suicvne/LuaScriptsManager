@@ -1,9 +1,13 @@
 ﻿<Properties StartupItem="Gtktester\LuaModuleManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DatabaseCreator\MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester\MainWindow.cs">
     <Files>
-      <File FileName="DatabaseCreator\Edit.cs" Line="1" Column="1" />
-      <File FileName="DatabaseCreator\MainWindow.cs" Line="1" Column="1" />
+      <File FileName="DatabaseCreator\Edit.cs" Line="23" Column="27" />
+      <File FileName="DatabaseCreator\MainWindow.cs" Line="96" Column="6" />
+      <File FileName="Gtktester\MainWindow.cs" Line="123" Column="33" />
+      <File FileName="Gtktester\AskForLunaLuaWidget.cs" Line="45" Column="88" />
+      <File FileName="Gtktester\InformationView.cs" Line="191" Column="35" />
+      <File FileName="Gtktester\Settings.cs" Line="48" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

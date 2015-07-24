@@ -12,7 +12,7 @@ using Gtktester;
 public partial class MainWindow: Gtk.Window
 {
     private List<LuaModule> example = new List<LuaModule>();
-    public int Index { get; set;}
+
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
@@ -115,5 +115,16 @@ THE SOFTWARE IS PROVIDED """"AS IS"""", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     {
         this.OnDeleteEvent(this, new DeleteEventArgs());
         //this.Destroy();
+    }
+    protected void OnPreferencesActionActivated (object sender, EventArgs e)
+    {
+        MessageDialog md = new MessageDialog(null, 
+            DialogFlags.Modal, 
+            MessageType.Question, 
+            ButtonsType.Ok, 
+            @"Work in progress! Stay patient please!");
+        md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+        md.Run();
+        md.Destroy();
     }
 }

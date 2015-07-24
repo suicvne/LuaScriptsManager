@@ -182,7 +182,7 @@ namespace Gtktester
                 while (d.Downloading)
                     ;
             }
-            if (m.ResURL != null || m.ResURL != "NULL")
+            if (m.ResURL != "NULL")
             {
                 string toSaveToFileName = m.ResURL.Substring(m.LuaURL.LastIndexOf("/")).Trim('/');
 
