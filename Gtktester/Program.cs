@@ -25,8 +25,17 @@ namespace Gtktester
 
             if (File.Exists(ProgramSettings.ConfigDirectory + Path.DirectorySeparatorChar + ".settings.json"))
             {
-                MainWindow mw = new MainWindow();
-                mw.Show();
+                if (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Updater.exe"))
+                {
+                    File.Delete(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Updater.exe");
+                    Changelog cl = new Changelog();
+                    cl.Show();
+                }
+                else
+                {
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                }
             }
             else
             {

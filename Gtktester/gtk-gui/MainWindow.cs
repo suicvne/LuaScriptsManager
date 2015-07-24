@@ -54,7 +54,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -82,9 +82,7 @@ public partial class MainWindow
 		global::Gtk.Paned.PanedChild w4 = ((global::Gtk.Paned.PanedChild)(this.hpaned2 [this.GtkScrolledWindow]));
 		w4.Resize = false;
 		// Container child hpaned2.Gtk.Paned+PanedChild
-		this.informationview1 = new global::Gtktester.InformationView ();
-		this.informationview1.Events = ((global::Gdk.EventMask)(256));
-		this.informationview1.Name = "informationview1";
+		this.informationview1 = null;
 		this.hpaned2.Add (this.informationview1);
 		this.vbox1.Add (this.hpaned2);
 		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned2]));
