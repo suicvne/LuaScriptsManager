@@ -3,7 +3,6 @@ using Gtk;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
-using thing2;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,7 +10,7 @@ using Gtktester;
 
 public partial class MainWindow: Gtk.Window
 {
-    private List<LuaModule> example = new List<LuaModule>();
+    private List<LuaModuleManager.LuaModule> example = new List<LuaModuleManager.LuaModule>();
 
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
@@ -30,7 +29,7 @@ public partial class MainWindow: Gtk.Window
             string jsonDatabase = client.DownloadString("http://mrmiketheripper.x10.mx/luamodulemanager/test.json");
 
             if (jsonDatabase != null)
-                example = JsonConvert.DeserializeObject<List<LuaModule>>(jsonDatabase);
+                example = JsonConvert.DeserializeObject<List<LuaModuleManager.LuaModule>>(jsonDatabase);
         }
         LoadDatabaseIntoTreeview();
     }
@@ -115,7 +114,8 @@ THE SOFTWARE IS PROVIDED """"AS IS"""", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     {
         this.OnDeleteEvent(this, new DeleteEventArgs());
         //this.Destroy();
-    }
+    }
+
     protected void OnPreferencesActionActivated (object sender, EventArgs e)
     {
         MessageDialog md = new MessageDialog(null, 

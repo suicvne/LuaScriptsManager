@@ -3,7 +3,6 @@
 // */
 using System;
 using Gtk;
-using thing2;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
@@ -11,7 +10,7 @@ using System.IO;
 public partial class MainWindow: Gtk.Window
 {
     private string CurrentOpenFile = "";
-    private List<LuaModule> db = new List<LuaModule>();
+    private List<LuaModuleManager.LuaModule> db = new List<LuaModuleManager.LuaModule>();
 
     public MainWindow()
         : base(Gtk.WindowType.Toplevel)

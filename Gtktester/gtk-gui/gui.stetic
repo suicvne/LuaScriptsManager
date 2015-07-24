@@ -109,7 +109,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="Gtktester.FirstRunWindow" design-size="600 315">
+  <widget class="Gtk.Window" id="Gtktester.FirstRunWindow" design-size="600 350">
     <property name="MemberName" />
     <property name="WidthRequest">570</property>
     <property name="Title" translatable="yes" />

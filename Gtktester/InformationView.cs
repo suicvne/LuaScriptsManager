@@ -20,7 +20,7 @@ namespace Gtktester
 
         private string LuaScriptRemote;
         private string LuaScriptLocal;
-        private LuaModule m;
+        private LuaModuleManager.LuaModule m;
 
         public InformationView()
         {
@@ -44,7 +44,7 @@ namespace Gtktester
             //md.Destroy();
         }
 
-        public void SetAllData(LuaModule mm)
+        public void SetAllData(LuaModuleManager.LuaModule mm)
         {
             scriptTitleLabel.Text = mm.ScriptName;
             m = mm;

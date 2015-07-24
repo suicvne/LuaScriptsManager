@@ -96,9 +96,7 @@ public partial class MainWindow
 		w4.Resize = false;
 		w4.Shrink = false;
 		// Container child hpaned1.Gtk.Paned+PanedChild
-		this.edit1 = new global::DatabaseCreator.Edit ();
-		this.edit1.Events = ((global::Gdk.EventMask)(256));
-		this.edit1.Name = "edit1";
+		this.edit1 = null;
 		this.hpaned1.Add (this.edit1);
 		this.vbox1.Add (this.hpaned1);
 		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned1]));

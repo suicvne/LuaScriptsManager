@@ -7,7 +7,7 @@ namespace thing2
 {
     class LuaModules
     {
-        public List<LuaModule> ModuleList = new List<LuaModule>();
+        public List<LuaModuleManager.LuaModule> ModuleList = new List<LuaModuleManager.LuaModule>();
         public LuaModules()
         {
             /*ModuleList.Add(new LuaModule()
