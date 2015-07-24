@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gtktester", "Gtktester\Gtktester.csproj", "{BE45C93C-596F-4923-A781-6899FB32C895}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaModuleManager", "Gtktester\LuaModuleManager.csproj", "{BE45C93C-596F-4923-A781-6899FB32C895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
