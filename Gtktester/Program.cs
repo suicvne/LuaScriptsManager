@@ -22,7 +22,10 @@ namespace Gtktester
             if (Internals.CurrentOS == InternalOperatingSystem.Windows)
                 Console.WriteLine("Gtk: {0}", CheckWindowsGtk());
 
+            SetupTheme();
+
             LoadSettings();
+            Console.WriteLine("Settings found in \"{0}\"", ProgramSettings.ConfigDirectory);
 
             if (Internals.CurrentOS == InternalOperatingSystem.Linux)
                 XInitThreads();
@@ -103,7 +106,7 @@ namespace Gtktester
             return true;
         }
 
-        void SetupTheme ()
+        static void SetupTheme ()
         {
             // Use the bundled gtkrc only if the Xamarin theme is installed
             if (File.Exists (Path.Combine (Gtk.Rc.ModuleDir, "libxamarin.so")) || File.Exists (Path.Combine (Gtk.Rc.ModuleDir, "libxamarin.dll"))) {
