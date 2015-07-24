@@ -147,6 +147,8 @@ namespace Gtktester
                 this.installUpdateButton.Sensitive = false;
             }
             this.usagePreview.Buffer.Text = this.m.UsageExample;
+
+            CheckForScriptUpdates();
         }
 
         private void CheckForScriptUpdates()

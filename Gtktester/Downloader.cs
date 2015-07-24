@@ -67,6 +67,9 @@ namespace Gtktester
                             {
                                 foreach(ZipArchiveEntry entry in archive.Entries)
                                 {
+                                    //bc apparently it's 2015 w/ .net 4.5 and this still isn't handled automatically or at least as an option
+                                    if(File.Exists(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName))
+                                        File.Delete(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName);
                                     entry.ExtractToFile(System.IO.Path.Combine(hereIsWhereYouExtractToOhMyGod, entry.FullName));
                                 }
                             }

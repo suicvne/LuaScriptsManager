@@ -12,6 +12,7 @@ using Gtktester;
 public partial class MainWindow: Gtk.Window
 {
     private List<LuaModule> example = new List<LuaModule>();
+    public int Index { get; set;}
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{

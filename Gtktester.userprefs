@@ -1,29 +1,10 @@
-﻿<Properties StartupItem="Gtktester/LuaModuleManager.csproj">
+﻿<Properties StartupItem="Gtktester\LuaModuleManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DatabaseCreator\MainWindow.cs">
     <Files>
-      <File FileName="Gtktester/MainWindow.cs" Line="68" Column="32" />
-      <File FileName="Gtktester/FirstRunWindow.cs" Line="12" Column="24" />
-      <File FileName="Gtktester/Program.cs" Line="8" Column="25" />
-      <File FileName="Gtktester/InformationView.cs" Line="41" Column="76" />
-      <File FileName="Gtktester/Settings.cs" Line="42" Column="36" />
+      <File FileName="DatabaseCreator\Edit.cs" Line="1" Column="1" />
+      <File FileName="DatabaseCreator\MainWindow.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Gtktester" expanded="True">
-            <Node name="Gtktester" expanded="True">
-              <Node name="UserInterface" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="MainWindow.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
