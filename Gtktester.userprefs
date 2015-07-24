@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Gtktester/LuaModuleManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester/MainWindow.cs">
     <Files>
       <File FileName="Gtktester/Downloader.cs" Line="28" Column="10" />
-      <File FileName="Gtktester/Program.cs" Line="32" Column="31" />
+      <File FileName="Gtktester/Program.cs" Line="26" Column="39" />
       <File FileName="Gtktester/CheckForUpdatesProgress.cs" Line="33" Column="132" />
       <File FileName="Gtktester/Changelog.cs" Line="14" Column="33" />
+      <File FileName="Gtktester/Properties/AssemblyInfo.cs" Line="13" Column="35" />
+      <File FileName="Gtktester/MainWindow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

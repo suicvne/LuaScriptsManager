@@ -82,7 +82,9 @@ public partial class MainWindow
 		global::Gtk.Paned.PanedChild w4 = ((global::Gtk.Paned.PanedChild)(this.hpaned2 [this.GtkScrolledWindow]));
 		w4.Resize = false;
 		// Container child hpaned2.Gtk.Paned+PanedChild
-		this.informationview1 = null;
+		this.informationview1 = new global::Gtktester.InformationView ();
+		this.informationview1.Events = ((global::Gdk.EventMask)(256));
+		this.informationview1.Name = "informationview1";
 		this.hpaned2.Add (this.informationview1);
 		this.vbox1.Add (this.hpaned2);
 		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned2]));
