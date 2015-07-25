@@ -48,7 +48,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="MonoDevelop.Core">
-      <HintPath>..\..\..\..\..\Program Files %28x86%29\Xamarin Studio\bin\MonoDevelop.Core.dll</HintPath>
+      <HintPath>Necessary Libraries\MonoDevelop.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +85,7 @@
     <Compile Include="gtk-gui\Gtktester.CheckForUpdatesProgress.cs" />
     <Compile Include="Changelog.cs" />
     <Compile Include="gtk-gui\Gtktester.Changelog.cs" />
+    <Compile Include="gtk-gui\Gtktester.Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

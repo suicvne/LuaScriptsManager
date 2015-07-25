@@ -63,15 +63,24 @@ namespace Gtktester
 
                             if(!Directory.Exists(hereIsWhereYouExtractToOhMyGod))
                                 Directory.CreateDirectory(hereIsWhereYouExtractToOhMyGod);
-                            using(ZipArchive archive = ZipFile.OpenRead(_location))
+                            try
                             {
-                                foreach(ZipArchiveEntry entry in archive.Entries)
+                                using(ZipArchive archive = ZipFile.OpenRead(_location))
                                 {
-                                    //bc apparently it's 2015 w/ .net 4.5 and this still isn't handled automatically or at least as an option
-                                    if(File.Exists(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName))
-                                        File.Delete(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName);
-                                    entry.ExtractToFile(System.IO.Path.Combine(hereIsWhereYouExtractToOhMyGod, entry.FullName));
+                                    foreach(ZipArchiveEntry entry in archive.Entries)
+                                    {
+                                        //bc apparently it's 2015 w/ .net 4.5 and this still isn't handled automatically or at least as an option
+                                        if(File.Exists(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName))
+                                            File.Delete(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName);
+                                        entry.ExtractToFile(System.IO.Path.Combine(hereIsWhereYouExtractToOhMyGod, entry.FullName));
+                                    }
                                 }
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageDialog md = 
+                                    new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
+                                        "Error trying to extract the zip\n\n{0}", ex.Message);
                             }
                             File.Delete(_location);
                         }
