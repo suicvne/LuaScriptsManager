@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Updater\Updater.csproj">
+﻿<Properties StartupItem="Updater/Updater.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Updater\MainWindow.cs">
     <Files>
@@ -17,5 +17,6 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>DatabaseCreator\DatabaseCreator.csproj</String>
+    <String>DatabaseCreator/DatabaseCreator.csproj</String>
   </DisabledProjects>
 </Properties>

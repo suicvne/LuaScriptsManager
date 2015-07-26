@@ -28,9 +28,7 @@ namespace Gtktester
 			this.vbox2.Name = "vbox2";
 			this.vbox2.Spacing = 6;
 			// Container child vbox2.Gtk.Box+BoxChild
-			this.firstrunwidget1 = new global::Gtktester.FirstRunWidget ();
-			this.firstrunwidget1.Events = ((global::Gdk.EventMask)(256));
-			this.firstrunwidget1.Name = "firstrunwidget1";
+			this.firstrunwidget1 = null;
 			this.vbox2.Add (this.firstrunwidget1);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.firstrunwidget1]));
 			w1.Position = 0;

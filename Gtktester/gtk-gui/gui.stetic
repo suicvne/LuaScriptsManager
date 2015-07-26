@@ -46,7 +46,6 @@
     <property name="MemberName" />
     <property name="Title" translatable="yes">Lua Module Manager - v0.0.0.0</property>
     <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
-    <property name="TypeHint">Desktop</property>
     <property name="WindowPosition">Center</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>

@@ -17,6 +17,8 @@ public partial class MainWindow: Gtk.Window
 	{
         CheckForUpdatesProgress cfup = new CheckForUpdatesProgress(Assembly.GetExecutingAssembly().GetName().Version);
         cfup.Show();
+        if (cfup.CheckForUpdates() == false)
+            cfup.Destroy();
 
 		Build ();
 

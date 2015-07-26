@@ -15,7 +15,10 @@ namespace Updater
     {
         public static void Main(string[] args)
         {
-            CheckWindowsGtk();
+            Gtktester.Settings filler = new Gtktester.Settings();
+
+            if(Internals.CurrentOS == InternalOperatingSystem.Windows)
+                CheckWindowsGtk();
 
             Application.Init();
             MainWindow win = new MainWindow();

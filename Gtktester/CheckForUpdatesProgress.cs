@@ -16,10 +16,9 @@ namespace Gtktester
         {
             CurrentVersion = _CurrentVersion;
             this.Build();
-            CheckForUpdates();
         }
 
-        private void CheckForUpdates()
+        public bool CheckForUpdates()
         {
             using (WebClient wc = new WebClient())
             {
@@ -35,11 +34,12 @@ namespace Gtktester
                         Environment.Exit(1);
                     }
                     else
-                        this.Destroy();
+                        return false;
                 }
                 else
-                    this.Destroy();
+                    return false;
             }
+            return false;
         }
 
     }

@@ -48,14 +48,13 @@ public partial class MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Lua Module Manager - v0.0.0.0");
 		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
-		this.TypeHint = ((global::Gdk.WindowTypeHint)(7));
 		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
