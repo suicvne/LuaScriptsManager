@@ -14,11 +14,11 @@
       </source>
     </icon-set>
   </icon-factory>
-  <widget class="Gtk.Window" id="MainWindow" design-size="717 427">
+  <widget class="Gtk.Window" id="MainWindow" design-size="800 427">
     <action-group name="Default">
       <action id="LunaLuaModuleManagerAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">LunaLua Module Manager</property>
+        <property name="Label" translatable="yes">_LunaLua Module Manager</property>
         <property name="ShortLabel" translatable="yes">LunaLua Module Manager</property>
       </action>
       <action id="dialogInfoAction">
@@ -46,7 +46,8 @@
     <property name="MemberName" />
     <property name="Title" translatable="yes">Lua Module Manager - v0.0.0.0</property>
     <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
-    <property name="WindowPosition">CenterAlways</property>
+    <property name="TypeHint">Desktop</property>
+    <property name="WindowPosition">Center</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <widget class="Gtk.VBox" id="vbox1">
@@ -74,7 +75,7 @@
           <widget class="Gtk.HPaned" id="hpaned2">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Position">159</property>
+            <property name="Position">167</property>
             <child>
               <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
                 <property name="MemberName" />
@@ -103,7 +104,7 @@
           </widget>
           <packing>
             <property name="Position">1</property>
-            <property name="AutoSize">True</property>
+            <property name="AutoSize">False</property>
           </packing>
         </child>
       </widget>
@@ -181,7 +182,7 @@
         <child>
           <widget class="Gtk.Label" id="scriptTitleLabel">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Script Title</property>
+            <property name="LabelProp" translatable="yes">No script selected!</property>
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -193,7 +194,7 @@
         <child>
           <widget class="Gtk.Label" id="descriptionLabel">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Description</property>
+            <property name="LabelProp" translatable="yes">Select one from the left side to view its info.</property>
           </widget>
           <packing>
             <property name="Position">1</property>
@@ -212,7 +213,7 @@
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
                 <property name="Editable">False</property>
-                <property name="Text">Test!</property>
+                <property name="Text" />
                 <property name="WrapMode">Word</property>
               </widget>
             </child>
@@ -569,6 +570,193 @@ If you already have it, please select the directory it resides in.</property>
           <packing>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Gtktester.SettingsUI" design-size="646 318">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">LunaLua Module Manager - Settings</property>
+    <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
+    <property name="TypeHint">Dialog</property>
+    <property name="WindowPosition">Center</property>
+    <property name="Modal">True</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <child>
+      <widget class="Gtk.Notebook" id="notebook1">
+        <property name="MemberName" />
+        <property name="CanFocus">True</property>
+        <property name="CurrentPage">0</property>
+        <property name="BorderWidth">6</property>
+        <child>
+          <widget class="Gtk.VBox" id="vbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.HBox" id="hbox1">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label3">
+                    <property name="MemberName" />
+                    <property name="HeightRequest">70</property>
+                    <property name="LabelProp" translatable="yes">LunaLua Directory:</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="lunaLuaDirEntry">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">450</property>
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="button41">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextAndIcon</property>
+                    <property name="Icon">stock:gtk-directory Menu</property>
+                    <property name="Label" translatable="yes">Browse</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButton41Clicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.HBox" id="hbox2">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="HeightRequest">91</property>
+                    <property name="LabelProp" translatable="yes">Database Location:</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="databaseLocationEntry">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">450</property>
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.HBox" id="hbox3">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.CheckButton" id="startAppMaximizedCheck">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Label" translatable="yes">Start Application Maximized</property>
+                    <property name="DrawIndicator">True</property>
+                    <property name="HasLabel">True</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="resetDatabaseBtn">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextAndIcon</property>
+                    <property name="Icon">stock:gtk-undo Menu</property>
+                    <property name="Label" translatable="yes">Reset Database</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnResetDatabaseBtnClicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="button21">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextAndIcon</property>
+                    <property name="Icon">stock:gtk-save Menu</property>
+                    <property name="Label" translatable="yes">Save Settings</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButton21Clicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Settings</property>
+          </widget>
+          <packing>
+            <property name="type">tab</property>
           </packing>
         </child>
       </widget>

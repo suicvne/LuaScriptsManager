@@ -85,7 +85,8 @@
     <Compile Include="gtk-gui\Gtktester.CheckForUpdatesProgress.cs" />
     <Compile Include="Changelog.cs" />
     <Compile Include="gtk-gui\Gtktester.Changelog.cs" />
-    <Compile Include="gtk-gui\Gtktester.Settings.cs" />
+    <Compile Include="SettingsUI.cs" />
+    <Compile Include="gtk-gui\Gtktester.SettingsUI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

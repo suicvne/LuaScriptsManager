@@ -16,6 +16,7 @@ namespace Gtktester
         {
             CurrentVersion = _CurrentVersion;
             this.Build();
+            CheckForUpdates();
         }
 
         private void CheckForUpdates()

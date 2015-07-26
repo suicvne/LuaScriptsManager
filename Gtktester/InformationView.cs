@@ -38,6 +38,9 @@ namespace Gtktester
             scriptTitleLabel.SetAlignment(0, 0);
 
             descriptionLabel.SetAlignment(0, 0);
+
+
+            usagePreview.ModifyFont(Pango.FontDescription.FromString("Courier"));
             //Pango.FontDescription pd = Pango.FontDescription.FromString(scriptTitleLabel.Text);
             //MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, pd.Family.ToString());
             //md.Run();
@@ -83,6 +86,7 @@ namespace Gtktester
                     MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
                         "Error\n" + ex.Message + "\n\nPlease email miketheripper1@gmail.com with this information!");
                     md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+                    md.WindowPosition = WindowPosition.Center;
                     md.Run();
                     md.Destroy();
                 }
@@ -202,6 +206,7 @@ namespace Gtktester
 
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Successfully installed LunaLua Module!");
             md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+            md.WindowPosition = WindowPosition.Center;
             md.Run();
             md.Destroy();
         }

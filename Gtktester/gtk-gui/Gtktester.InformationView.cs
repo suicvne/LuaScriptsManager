@@ -35,7 +35,7 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.scriptTitleLabel = new global::Gtk.Label ();
 			this.scriptTitleLabel.Name = "scriptTitleLabel";
-			this.scriptTitleLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Script Title");
+			this.scriptTitleLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("No script selected!");
 			this.vbox1.Add (this.scriptTitleLabel);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.scriptTitleLabel]));
 			w1.Position = 0;
@@ -44,7 +44,7 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.descriptionLabel = new global::Gtk.Label ();
 			this.descriptionLabel.Name = "descriptionLabel";
-			this.descriptionLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Description");
+			this.descriptionLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Select one from the left side to view its info.");
 			this.vbox1.Add (this.descriptionLabel);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.descriptionLabel]));
 			w2.Position = 1;
@@ -56,7 +56,6 @@ namespace Gtktester
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 			this.usagePreview = new global::Gtk.TextView ();
-			this.usagePreview.Buffer.Text = "Test!";
 			this.usagePreview.CanFocus = true;
 			this.usagePreview.Name = "usagePreview";
 			this.usagePreview.Editable = false;

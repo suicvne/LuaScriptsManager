@@ -17,6 +17,7 @@
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <signal name="DestroyEvent" handler="OnDestroyEvent" />
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />

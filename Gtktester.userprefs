@@ -1,17 +1,23 @@
-﻿<Properties StartupItem="Gtktester\LuaModuleManager.csproj">
+﻿<Properties StartupItem="Updater\Updater.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester\Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester\MainWindow.cs">
     <Files>
-      <File FileName="Gtktester\Downloader.cs" Line="21" Column="29" />
+      <File FileName="Gtktester\Downloader.cs" Line="1" Column="1" />
       <File FileName="Gtktester\CheckForUpdatesProgress.cs" Line="1" Column="1" />
       <File FileName="Gtktester\Changelog.cs" Line="1" Column="1" />
       <File FileName="Gtktester\Properties\AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="Gtktester\FirstRunWindow.cs" Line="1" Column="1" />
-      <File FileName="Gtktester\Program.cs" Line="28" Column="91" />
+      <File FileName="Gtktester\Program.cs" Line="25" Column="15" />
+      <File FileName="Gtktester\MainWindow.cs" Line="105" Column="42" />
+      <File FileName="Gtktester\SettingsUI.cs" Line="71" Column="10" />
+      <File FileName="Gtktester\FirstRunWidget.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>DatabaseCreator\DatabaseCreator.csproj</String>
+  </DisabledProjects>
 </Properties>

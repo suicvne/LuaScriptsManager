@@ -31,7 +31,7 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-		this.LunaLuaModuleManagerAction = new global::Gtk.Action ("LunaLuaModuleManagerAction", global::Mono.Unix.Catalog.GetString ("LunaLua Module Manager"), null, null);
+		this.LunaLuaModuleManagerAction = new global::Gtk.Action ("LunaLuaModuleManagerAction", global::Mono.Unix.Catalog.GetString ("_LunaLua Module Manager"), null, null);
 		this.LunaLuaModuleManagerAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("LunaLua Module Manager");
 		w1.Add (this.LunaLuaModuleManagerAction, null);
 		this.dialogInfoAction = new global::Gtk.Action ("dialogInfoAction", global::Mono.Unix.Catalog.GetString ("About"), null, "gtk-dialog-info");
@@ -48,6 +48,7 @@ public partial class MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Lua Module Manager - v0.0.0.0");
 		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
+		this.TypeHint = ((global::Gdk.WindowTypeHint)(7));
 		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
@@ -66,7 +67,7 @@ public partial class MainWindow
 		this.hpaned2 = new global::Gtk.HPaned ();
 		this.hpaned2.CanFocus = true;
 		this.hpaned2.Name = "hpaned2";
-		this.hpaned2.Position = 159;
+		this.hpaned2.Position = 167;
 		// Container child hpaned2.Gtk.Paned+PanedChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow.WidthRequest = 250;
@@ -93,7 +94,7 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 717;
+		this.DefaultWidth = 800;
 		this.DefaultHeight = 427;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);

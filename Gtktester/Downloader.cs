@@ -81,6 +81,10 @@ namespace Gtktester
                                 MessageDialog md = 
                                     new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
                                         "Error trying to extract the zip\n\n{0}", ex.Message);
+                                md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+                                md.WindowPosition = WindowPosition.Center;
+                                md.Run();
+                                md.Destroy();
                             }
                             File.Delete(_location);
                         }
@@ -108,8 +112,9 @@ namespace Gtktester
                 catch(Exception ex)
                 {
                     MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
-                        "Error Downloading File\n\n{0}\nPlease email miketheripper1@gmail.com with this information!", ex.Message);
+                        "Error Downloading File\n\n{0}\nPlease contact miketheripper1@gmail.com with this information!", ex.Message);
                     md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+                    md.WindowPosition = WindowPosition.Center;
                     md.Run();
                     md.Destroy();
                 }

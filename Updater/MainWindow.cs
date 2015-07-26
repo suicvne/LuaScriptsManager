@@ -13,6 +13,7 @@ public partial class MainWindow: Gtk.Window
         : base(Gtk.WindowType.Toplevel)
     {
         Build();
+        DoUpdateEvents();
     }
 
     private void DoUpdateEvents()
@@ -27,6 +28,9 @@ public partial class MainWindow: Gtk.Window
                                    "ERROR:\nCould not find your LuaModuleManager.exe.");
             md.Run();
             md.Destroy();
+            this.Destroy();
+            Application.Quit();
+            Environment.Exit(-1);
         }
     }
 
@@ -49,18 +53,11 @@ public partial class MainWindow: Gtk.Window
 
         using (WebClient wc = new WebClient())
         {
-            wc.DownloadDataCompleted += (object sender, DownloadDataCompletedEventArgs e) => 
-                {
-                    if(!e.Cancelled)
-                    {                    
-                        Console.WriteLine("Done!");
-                        Process.Start(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
-                    }
-                    this.Destroy();
-                };
-
-            wc.DownloadFileAsync(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.exe"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
-
+            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.exe"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
+            Console.WriteLine("Done!");
+            Process.Start(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
+            this.Destroy();
+            Environment.Exit(0);
         }
 
     }
@@ -69,5 +66,12 @@ public partial class MainWindow: Gtk.Window
     {
         Application.Quit();
         a.RetVal = true;
+        Environment.Exit(-1);
+    }
+    protected void OnDestroyEvent(object sender, DestroyEventArgs a)
+    {
+        Application.Quit();
+        a.RetVal = true;
+        Environment.Exit(-1);
     }
 }

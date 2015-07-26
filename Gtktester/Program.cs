@@ -22,7 +22,8 @@ namespace Gtktester
             if (Internals.CurrentOS == InternalOperatingSystem.Windows)
                 Console.WriteLine("Gtk: {0}", CheckWindowsGtk());
 
-            SetupTheme();
+            //if(Internals.CurrentOS != InternalOperatingSystem.Windows)
+                SetupTheme();
 
             LoadSettings();
             Console.WriteLine("Settings found in \"{0}\"", ProgramSettings.ConfigDirectory);
