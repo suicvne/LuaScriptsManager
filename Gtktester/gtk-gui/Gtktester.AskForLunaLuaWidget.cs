@@ -44,7 +44,10 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("In order to use the LunaLua Module Manager, a valid installation of LunaLua is required.\n\nIf you don't have LunaLua, you can download it from http://engine.wohlnet.ru/LunaLua\n\nIf you already have it, please select the directory it resides in.");
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("In order to use the LunaLua Module Manager, a valid installation of LunaLua is re" +
+			"quired.\n\nIf you don\'t have LunaLua, you can download it from http://engine.wohln" +
+			"et.ru/LunaLua\n\nIf you already have it, please select the directory it resides in" +
+			".");
 			this.vbox1.Add (this.label2);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.label2]));
 			w2.Position = 1;
