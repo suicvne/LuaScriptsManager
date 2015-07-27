@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaModuleManager", "Gtktester\LuaModuleManager.csproj", "{BE45C93C-596F-4923-A781-6899FB32C895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseCreator", "DatabaseCreator\DatabaseCreator.csproj", "{394CE73B-23E0-4085-A271-8EA46D547146}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{034F7C7F-E220-4885-AAAF-19DE6C568413}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Debug|x86.Build.0 = Debug|x86
 		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Release|x86.ActiveCfg = Release|x86
 		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Release|x86.Build.0 = Release|x86
-		{394CE73B-23E0-4085-A271-8EA46D547146}.Debug|x86.ActiveCfg = Debug|x86
-		{394CE73B-23E0-4085-A271-8EA46D547146}.Debug|x86.Build.0 = Debug|x86
-		{394CE73B-23E0-4085-A271-8EA46D547146}.Release|x86.ActiveCfg = Release|x86
-		{394CE73B-23E0-4085-A271-8EA46D547146}.Release|x86.Build.0 = Release|x86
 		{BE45C93C-596F-4923-A781-6899FB32C895}.Debug|x86.ActiveCfg = Debug|x86
 		{BE45C93C-596F-4923-A781-6899FB32C895}.Debug|x86.Build.0 = Debug|x86
 		{BE45C93C-596F-4923-A781-6899FB32C895}.Release|x86.ActiveCfg = Release|x86

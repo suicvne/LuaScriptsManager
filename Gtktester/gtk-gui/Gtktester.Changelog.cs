@@ -31,7 +31,7 @@ namespace Gtktester
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = "The LuaModuleManager was updated! Here\'s a list of the changes";
+			this.label2.LabelProp = "The LuaModuleManager was updated! Here's a list of the changes";
 			this.vbox2.Add (this.label2);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.label2]));
 			w2.Position = 0;

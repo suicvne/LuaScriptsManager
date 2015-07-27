@@ -4,6 +4,7 @@
     <images-root-path>..</images-root-path>
   </configuration>
   <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../../Gtktester/bin/Debug/LuaModuleManager.exe" />
     <widget-library name="../bin/Debug/DatabaseCreator.exe" internal="true" />
   </import>
@@ -58,7 +59,7 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-            <node name="__gtksharp_119_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar1" type="Menubar">
               <node type="Menu" action="FileAction">
                 <node type="Menuitem" action="OpenAction" />
                 <node type="Menuitem" action="SaveAction" />
@@ -105,6 +106,7 @@
               <widget class="DatabaseCreator.Edit" id="edit1">
                 <property name="MemberName" />
                 <property name="Events">ButtonPressMask</property>
+                <property name="Index">0</property>
               </widget>
             </child>
           </widget>
