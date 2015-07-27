@@ -162,4 +162,9 @@ THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
         s.Parent = this;
         s.Show();
     }
+    protected void OnConvertActionActivated (object sender, EventArgs e)
+    {
+        BugReporter br = new BugReporter();
+        br.Show();
+    }
 }

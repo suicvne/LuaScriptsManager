@@ -13,6 +13,8 @@ public partial class MainWindow
 	
 	private global::Gtk.Action quitAction;
 	
+	private global::Gtk.Action convertAction;
+	
 	private global::Gtk.VBox vbox1;
 	
 	private global::Gtk.MenuBar menubar1;
@@ -41,8 +43,12 @@ public partial class MainWindow
 		this.preferencesAction.ShortLabel = "Settings";
 		w1.Add (this.preferencesAction, null);
 		this.quitAction = new global::Gtk.Action ("quitAction", "_Close", null, "gtk-quit");
+		this.quitAction.IsImportant = true;
 		this.quitAction.ShortLabel = "_Close";
 		w1.Add (this.quitAction, null);
+		this.convertAction = new global::Gtk.Action ("convertAction", "_Bug Reporter", null, "gtk-convert");
+		this.convertAction.ShortLabel = "_Bug Reporter";
+		w1.Add (this.convertAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -54,7 +60,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/><menuitem name='convertAction' action='convertAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -100,6 +106,7 @@ public partial class MainWindow
 		this.dialogInfoAction.Activated += new global::System.EventHandler (this.OnAbout);
 		this.preferencesAction.Activated += new global::System.EventHandler (this.OnPreferencesActionActivated);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnClosed);
+		this.convertAction.Activated += new global::System.EventHandler (this.OnConvertActionActivated);
 		this.treeview1.CursorChanged += new global::System.EventHandler (this.treeview_SelectionChanged);
 	}
 }

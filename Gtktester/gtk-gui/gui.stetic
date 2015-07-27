@@ -37,10 +37,18 @@
       </action>
       <action id="quitAction">
         <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
         <property name="Label" translatable="yes">_Close</property>
         <property name="ShortLabel" translatable="yes">_Close</property>
         <property name="StockId">gtk-quit</property>
         <signal name="Activated" handler="OnClosed" />
+      </action>
+      <action id="convertAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Bug Reporter</property>
+        <property name="ShortLabel" translatable="yes">_Bug Reporter</property>
+        <property name="StockId">gtk-convert</property>
+        <signal name="Activated" handler="OnConvertActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -60,6 +68,7 @@
                 <node type="Menuitem" action="dialogInfoAction" />
                 <node type="Menuitem" action="preferencesAction" />
                 <node type="Menuitem" action="quitAction" />
+                <node type="Menuitem" action="convertAction" />
               </node>
             </node>
           </widget>
@@ -817,12 +826,131 @@ If you already have it, please select the directory it resides in.</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="Gtktester.BugReporter" design-size="400 300">
+  <widget class="Gtk.Window" id="Gtktester.BugReporter" design-size="400 382">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">BugReporter</property>
-    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Title" translatable="yes">LunaLua Module Manager: Bug Reporter</property>
+    <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
+    <property name="WindowPosition">Center</property>
+    <property name="Modal">True</property>
+    <property name="BorderWidth">6</property>
+    <property name="Resizable">False</property>
     <child>
-      <placeholder />
+      <widget class="Gtk.VBox" id="vbox2">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp">The following information will be sent to our servers at
+http://mrmiketheripper.x10.mx/</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="textview1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Editable">False</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp">If you'd like, please enter any additional comments such as
+-Name
+-Description of problem
+-Other comments</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="textview2">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="button16">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Github Issues Page</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButton16Clicked" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button15">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Submit bug report</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButton15Clicked" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
