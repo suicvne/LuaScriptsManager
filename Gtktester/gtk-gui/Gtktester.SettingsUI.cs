@@ -37,7 +37,7 @@ namespace Gtktester
 			global::Stetic.Gui.Initialize (this);
 			// Widget Gtktester.SettingsUI
 			this.Name = "Gtktester.SettingsUI";
-			this.Title = global::Mono.Unix.Catalog.GetString ("LunaLua Module Manager - Settings");
+			this.Title = "LunaLua Module Manager - Settings";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
 			this.TypeHint = ((global::Gdk.WindowTypeHint)(1));
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
@@ -63,7 +63,7 @@ namespace Gtktester
 			this.label3 = new global::Gtk.Label ();
 			this.label3.HeightRequest = 70;
 			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("LunaLua Directory:");
+			this.label3.LabelProp = "LunaLua Directory:";
 			this.hbox1.Add (this.label3);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.label3]));
 			w1.Position = 0;
@@ -84,7 +84,7 @@ namespace Gtktester
 			this.button41.CanFocus = true;
 			this.button41.Name = "button41";
 			this.button41.UseUnderline = true;
-			this.button41.Label = global::Mono.Unix.Catalog.GetString ("Browse");
+			this.button41.Label = "Browse";
 			global::Gtk.Image w3 = new global::Gtk.Image ();
 			w3.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-directory", global::Gtk.IconSize.Menu);
 			this.button41.Image = w3;
@@ -106,7 +106,7 @@ namespace Gtktester
 			this.label4 = new global::Gtk.Label ();
 			this.label4.HeightRequest = 91;
 			this.label4.Name = "label4";
-			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("Database Location:");
+			this.label4.LabelProp = "Database Location:";
 			this.hbox2.Add (this.label4);
 			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label4]));
 			w6.Position = 0;
@@ -135,7 +135,7 @@ namespace Gtktester
 			this.startAppMaximizedCheck = new global::Gtk.CheckButton ();
 			this.startAppMaximizedCheck.CanFocus = true;
 			this.startAppMaximizedCheck.Name = "startAppMaximizedCheck";
-			this.startAppMaximizedCheck.Label = global::Mono.Unix.Catalog.GetString ("Start Application Maximized");
+			this.startAppMaximizedCheck.Label = "Start Application Maximized";
 			this.startAppMaximizedCheck.DrawIndicator = true;
 			this.startAppMaximizedCheck.UseUnderline = true;
 			this.hbox3.Add (this.startAppMaximizedCheck);
@@ -146,7 +146,7 @@ namespace Gtktester
 			this.resetDatabaseBtn.CanFocus = true;
 			this.resetDatabaseBtn.Name = "resetDatabaseBtn";
 			this.resetDatabaseBtn.UseUnderline = true;
-			this.resetDatabaseBtn.Label = global::Mono.Unix.Catalog.GetString ("Reset Database");
+			this.resetDatabaseBtn.Label = "Reset Database";
 			global::Gtk.Image w10 = new global::Gtk.Image ();
 			w10.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-undo", global::Gtk.IconSize.Menu);
 			this.resetDatabaseBtn.Image = w10;
@@ -160,7 +160,7 @@ namespace Gtktester
 			this.button21.CanFocus = true;
 			this.button21.Name = "button21";
 			this.button21.UseUnderline = true;
-			this.button21.Label = global::Mono.Unix.Catalog.GetString ("Save Settings");
+			this.button21.Label = "Save Settings";
 			global::Gtk.Image w12 = new global::Gtk.Image ();
 			w12.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-save", global::Gtk.IconSize.Menu);
 			this.button21.Image = w12;
@@ -178,7 +178,7 @@ namespace Gtktester
 			// Notebook tab
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Settings");
+			this.label1.LabelProp = "Settings";
 			this.notebook1.SetTabLabel (this.vbox2, this.label1);
 			this.label1.ShowAll ();
 			this.Add (this.notebook1);

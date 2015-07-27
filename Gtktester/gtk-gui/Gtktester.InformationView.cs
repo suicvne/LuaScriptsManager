@@ -35,7 +35,7 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.scriptTitleLabel = new global::Gtk.Label ();
 			this.scriptTitleLabel.Name = "scriptTitleLabel";
-			this.scriptTitleLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("No script selected!");
+			this.scriptTitleLabel.LabelProp = "No script selected!";
 			this.vbox1.Add (this.scriptTitleLabel);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.scriptTitleLabel]));
 			w1.Position = 0;
@@ -44,7 +44,7 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.descriptionLabel = new global::Gtk.Label ();
 			this.descriptionLabel.Name = "descriptionLabel";
-			this.descriptionLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Select one from the left side to view its info.");
+			this.descriptionLabel.LabelProp = "Select one from the left side to view its info.";
 			this.vbox1.Add (this.descriptionLabel);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.descriptionLabel]));
 			w2.Position = 1;
@@ -75,7 +75,7 @@ namespace Gtktester
 			this.installUpdateButton.CanFocus = true;
 			this.installUpdateButton.Name = "installUpdateButton";
 			this.installUpdateButton.UseUnderline = true;
-			this.installUpdateButton.Label = global::Mono.Unix.Catalog.GetString ("Install");
+			this.installUpdateButton.Label = "Install";
 			global::Gtk.Image w5 = new global::Gtk.Image ();
 			w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.Menu);
 			this.installUpdateButton.Image = w5;
@@ -98,7 +98,7 @@ namespace Gtktester
 			this.webButton.CanFocus = true;
 			this.webButton.Name = "webButton";
 			this.webButton.UseUnderline = true;
-			this.webButton.Label = global::Mono.Unix.Catalog.GetString ("Visit Website");
+			this.webButton.Label = "Visit Website";
 			this.hbox1.Add (this.webButton);
 			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.webButton]));
 			w8.Position = 2;

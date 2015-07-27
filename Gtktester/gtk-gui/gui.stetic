@@ -414,14 +414,9 @@ If you already have it, please select the directory it resides in.</property>
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
               <widget class="Gtk.Button" id="button2">
                 <property name="MemberName" />
+                <property name="WidthRequest">307</property>
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">Download LunaLua</property>
@@ -429,8 +424,8 @@ If you already have it, please select the directory it resides in.</property>
                 <signal name="Clicked" handler="OnButton2Clicked" />
               </widget>
               <packing>
-                <property name="Position">2</property>
-                <property name="AutoSize">True</property>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
               </packing>
             </child>
           </widget>
@@ -756,6 +751,67 @@ If you already have it, please select the directory it resides in.</property>
           </widget>
           <packing>
             <property name="type">tab</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Gtktester.AskForLunaLuaWindow" design-size="601 272">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes" />
+    <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
+    <property name="WindowPosition">Center</property>
+    <property name="BorderWidth">6</property>
+    <property name="Resizable">False</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox2">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtktester.AskForLunaLuaWidget" id="askforlunaluawidget1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="nextButton">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Next</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButtonNextClick" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
       </widget>

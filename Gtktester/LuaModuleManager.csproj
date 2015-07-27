@@ -87,6 +87,8 @@
     <Compile Include="gtk-gui\Gtktester.Changelog.cs" />
     <Compile Include="SettingsUI.cs" />
     <Compile Include="gtk-gui\Gtktester.SettingsUI.cs" />
+    <Compile Include="AskForLunaLuaWindow.cs" />
+    <Compile Include="gtk-gui\Gtktester.AskForLunaLuaWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

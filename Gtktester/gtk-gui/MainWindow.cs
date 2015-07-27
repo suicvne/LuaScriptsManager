@@ -31,22 +31,22 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-		this.LunaLuaModuleManagerAction = new global::Gtk.Action ("LunaLuaModuleManagerAction", global::Mono.Unix.Catalog.GetString ("_LunaLua Module Manager"), null, null);
-		this.LunaLuaModuleManagerAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("LunaLua Module Manager");
+		this.LunaLuaModuleManagerAction = new global::Gtk.Action ("LunaLuaModuleManagerAction", "_LunaLua Module Manager", null, null);
+		this.LunaLuaModuleManagerAction.ShortLabel = "LunaLua Module Manager";
 		w1.Add (this.LunaLuaModuleManagerAction, null);
-		this.dialogInfoAction = new global::Gtk.Action ("dialogInfoAction", global::Mono.Unix.Catalog.GetString ("About"), null, "gtk-dialog-info");
-		this.dialogInfoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("About");
+		this.dialogInfoAction = new global::Gtk.Action ("dialogInfoAction", "About", null, "gtk-dialog-info");
+		this.dialogInfoAction.ShortLabel = "About";
 		w1.Add (this.dialogInfoAction, null);
-		this.preferencesAction = new global::Gtk.Action ("preferencesAction", global::Mono.Unix.Catalog.GetString ("Settings"), null, "gtk-preferences");
-		this.preferencesAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Settings");
+		this.preferencesAction = new global::Gtk.Action ("preferencesAction", "Settings", null, "gtk-preferences");
+		this.preferencesAction.ShortLabel = "Settings";
 		w1.Add (this.preferencesAction, null);
-		this.quitAction = new global::Gtk.Action ("quitAction", global::Mono.Unix.Catalog.GetString ("_Close"), null, "gtk-quit");
-		this.quitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Close");
+		this.quitAction = new global::Gtk.Action ("quitAction", "_Close", null, "gtk-quit");
+		this.quitAction.ShortLabel = "_Close";
 		w1.Add (this.quitAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("Lua Module Manager - v0.0.0.0");
+		this.Title = "Lua Module Manager - v0.0.0.0";
 		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		// Container child MainWindow.Gtk.Container+ContainerChild

@@ -11,7 +11,7 @@ namespace Gtktester
 			global::Stetic.Gui.Initialize (this);
 			// Widget Gtktester.CheckForUpdatesProgress
 			this.Name = "Gtktester.CheckForUpdatesProgress";
-			this.Title = global::Mono.Unix.Catalog.GetString ("CheckForUpdatesProgress");
+			this.Title = "CheckForUpdatesProgress";
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.Modal = true;
 			this.Resizable = false;
@@ -20,7 +20,7 @@ namespace Gtktester
 			// Container child Gtktester.CheckForUpdatesProgress.Gtk.Container+ContainerChild
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Checking for updates..");
+			this.label1.LabelProp = "Checking for updates..";
 			this.Add (this.label1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

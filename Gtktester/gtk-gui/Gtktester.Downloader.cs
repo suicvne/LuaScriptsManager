@@ -15,7 +15,7 @@ namespace Gtktester
 			global::Stetic.Gui.Initialize (this);
 			// Widget Gtktester.Downloader
 			this.Name = "Gtktester.Downloader";
-			this.Title = global::Mono.Unix.Catalog.GetString ("Downloader");
+			this.Title = "Downloader";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.Modal = true;
@@ -29,7 +29,7 @@ namespace Gtktester
 			this.progressbar1 = new global::Gtk.ProgressBar ();
 			this.progressbar1.WidthRequest = 470;
 			this.progressbar1.Name = "progressbar1";
-			this.progressbar1.Text = global::Mono.Unix.Catalog.GetString ("TODO: 0kb/100kb");
+			this.progressbar1.Text = "TODO: 0kb/100kb";
 			this.fixed1.Add (this.progressbar1);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.progressbar1]));
 			w1.X = 20;
@@ -38,7 +38,7 @@ namespace Gtktester
 			this.speedLabel = new global::Gtk.Label ();
 			this.speedLabel.WidthRequest = 467;
 			this.speedLabel.Name = "speedLabel";
-			this.speedLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("0 Mb/s");
+			this.speedLabel.LabelProp = "0 Mb/s";
 			this.fixed1.Add (this.speedLabel);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.speedLabel]));
 			w2.X = 21;

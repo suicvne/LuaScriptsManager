@@ -1,14 +1,14 @@
-﻿<Properties StartupItem="Updater\Updater.csproj">
+﻿<Properties StartupItem="Gtktester\LuaModuleManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Updater\MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester\MainWindow.cs">
     <Files>
       <File FileName="Gtktester\InformationView.cs" Line="1" Column="1" />
       <File FileName="Gtktester\SettingsUI.cs" Line="1" Column="1" />
       <File FileName="Gtktester\Properties\AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="Gtktester\CheckForUpdatesProgress.cs" Line="1" Column="1" />
       <File FileName="Updater\Program.cs" Line="1" Column="1" />
-      <File FileName="Updater\MainWindow.cs" Line="47" Column="26" />
-      <File FileName="Updater\gtk-gui\MainWindow.cs" Line="1" Column="1" />
+      <File FileName="Gtktester\FirstRunWindow.cs" Line="17" Column="11" />
+      <File FileName="Gtktester\MainWindow.cs" Line="22" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

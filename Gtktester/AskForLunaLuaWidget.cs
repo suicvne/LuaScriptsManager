@@ -11,15 +11,12 @@ namespace Gtktester
     [System.ComponentModel.ToolboxItem(true)]
     public partial class AskForLunaLuaWidget : Gtk.Bin
     {
-        private FirstRunWindow _parent;
         public string LunaLuaPath = "";
 
-        public AskForLunaLuaWidget(FirstRunWindow parent)
+        public AskForLunaLuaWidget()
         {
-            _parent = parent;
             this.Build();
             SetFonts();
-            _parent.SetNextEnabled(false);
         }
 
         private void SetFonts()
@@ -55,19 +52,20 @@ namespace Gtktester
             }
         }
 
-        public void CheckValid(string path)
+        public bool CheckValid()
         {
+            string path = entry1.Text;
             if (Directory.Exists(String.Format("{0}{1}LuaScriptsLib", path, System.IO.Path.DirectorySeparatorChar)))
             {
                 label3.Text = "Valid!";
-                _parent.SetNextEnabled(true);
+                //_parent.SetNextEnabled(true);
                 LunaLuaPath = path;
-
+                return true;
             }
             else
             {
                 label3.Text = "Invalid (No LuaScriptsLib Folder)";
-                _parent.SetNextEnabled(false);
+                return false;
             }
         }
 
@@ -81,14 +79,14 @@ namespace Gtktester
             {
                 entry1.Text = fcd.Filename;
 
-                CheckValid(fcd.Filename);
+                CheckValid();
             }
             fcd.Destroy();
         }
 
         protected void OnEntry1Changed (object sender, EventArgs e)
         {
-            CheckValid(entry1.Text);
+            CheckValid();
         }
     }
 }

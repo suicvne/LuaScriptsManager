@@ -35,7 +35,7 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("LunaLua Setup");
+			this.label1.LabelProp = "LunaLua Setup";
 			this.vbox1.Add (this.label1);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.label1]));
 			w1.Position = 0;
@@ -44,10 +44,10 @@ namespace Gtktester
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("In order to use the LunaLua Module Manager, a valid installation of LunaLua is re" +
+			this.label2.LabelProp = "In order to use the LunaLua Module Manager, a valid installation of LunaLua is re" +
 			"quired.\n\nIf you don\'t have LunaLua, you can download it from http://engine.wohln" +
 			"et.ru/LunaLua\n\nIf you already have it, please select the directory it resides in" +
-			".");
+			".";
 			this.vbox1.Add (this.label2);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.label2]));
 			w2.Position = 1;
@@ -71,7 +71,7 @@ namespace Gtktester
 			this.button1.CanFocus = true;
 			this.button1.Name = "button1";
 			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString ("Browse");
+			this.button1.Label = "Browse";
 			this.hbox1.Add (this.button1);
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button1]));
 			w4.Position = 1;
@@ -80,7 +80,7 @@ namespace Gtktester
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.label3 = new global::Gtk.Label ();
 			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("Invalid (No LuaScriptsLib Folder)");
+			this.label3.LabelProp = "Invalid (No LuaScriptsLib Folder)";
 			this.hbox1.Add (this.label3);
 			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.label3]));
 			w5.Position = 2;
@@ -97,13 +97,14 @@ namespace Gtktester
 			this.hbox2.Spacing = 6;
 			// Container child hbox2.Gtk.Box+BoxChild
 			this.button2 = new global::Gtk.Button ();
+			this.button2.WidthRequest = 307;
 			this.button2.CanFocus = true;
 			this.button2.Name = "button2";
 			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString ("Download LunaLua");
+			this.button2.Label = "Download LunaLua";
 			this.hbox2.Add (this.button2);
 			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button2]));
-			w7.Position = 2;
+			w7.Position = 0;
 			this.vbox1.Add (this.hbox2);
 			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
 			w8.Position = 3;
