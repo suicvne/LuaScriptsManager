@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Gtktester/LuaModuleManager.csproj">
+﻿<Properties StartupItem="Gtktester\LuaModuleManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Gtktester/BugReporter.cs">
     <Files>

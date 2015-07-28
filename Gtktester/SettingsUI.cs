@@ -1,5 +1,7 @@
 ﻿using System;
 using Gtk;
+using System.IO;
+using System.Diagnostics;
 
 namespace Gtktester
 {
@@ -91,6 +93,23 @@ namespace Gtktester
                 lunaLuaDirEntry.Text = fcd.Filename;
             }
             fcd.Destroy();
+        }
+
+        protected void OnLunaLuaDirEntryChanged (object sender, EventArgs e)
+        {
+            string lunaDllPath = this.lunaLuaDirEntry.Text + System.IO.Path.DirectorySeparatorChar + "LunaDll.dll";
+            if (File.Exists(lunaDllPath))
+            {
+                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(lunaDllPath);
+                if (fvi.FileVersion == null || fvi.FileVersion == "")
+                    lblLunaLuaVersion.Text = "LunaLua outdated!";
+                else
+                    lblLunaLuaVersion.Text = "LunaLua Version: " + fvi.FileVersion;
+            }
+            else
+            {
+                lblLunaLuaVersion.Text = "";
+            }
         }
     }
 }

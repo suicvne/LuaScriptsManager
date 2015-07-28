@@ -16,6 +16,8 @@ namespace Gtktester
 		
 		private global::Gtk.Button button41;
 		
+		private global::Gtk.Label lblLunaLuaVersion;
+		
 		private global::Gtk.HBox hbox2;
 		
 		private global::Gtk.Label label4;
@@ -99,6 +101,15 @@ namespace Gtktester
 			w5.Expand = false;
 			w5.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
+			this.lblLunaLuaVersion = new global::Gtk.Label ();
+			this.lblLunaLuaVersion.Name = "lblLunaLuaVersion";
+			this.lblLunaLuaVersion.LabelProp = "LunaLua Version: ";
+			this.vbox2.Add (this.lblLunaLuaVersion);
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.lblLunaLuaVersion]));
+			w6.Position = 1;
+			w6.Expand = false;
+			w6.Fill = false;
+			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbox2 = new global::Gtk.HBox ();
 			this.hbox2.Name = "hbox2";
 			this.hbox2.Spacing = 6;
@@ -108,10 +119,10 @@ namespace Gtktester
 			this.label4.Name = "label4";
 			this.label4.LabelProp = "Database Location:";
 			this.hbox2.Add (this.label4);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label4]));
-			w6.Position = 0;
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label4]));
+			w7.Position = 0;
+			w7.Expand = false;
+			w7.Fill = false;
 			// Container child hbox2.Gtk.Box+BoxChild
 			this.databaseLocationEntry = new global::Gtk.Entry ();
 			this.databaseLocationEntry.WidthRequest = 450;
@@ -120,13 +131,13 @@ namespace Gtktester
 			this.databaseLocationEntry.IsEditable = true;
 			this.databaseLocationEntry.InvisibleChar = '●';
 			this.hbox2.Add (this.databaseLocationEntry);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.databaseLocationEntry]));
-			w7.Position = 1;
-			this.vbox2.Add (this.hbox2);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox2]));
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.databaseLocationEntry]));
 			w8.Position = 1;
-			w8.Expand = false;
-			w8.Fill = false;
+			this.vbox2.Add (this.hbox2);
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox2]));
+			w9.Position = 2;
+			w9.Expand = false;
+			w9.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbox3 = new global::Gtk.HBox ();
 			this.hbox3.Name = "hbox3";
@@ -139,41 +150,41 @@ namespace Gtktester
 			this.startAppMaximizedCheck.DrawIndicator = true;
 			this.startAppMaximizedCheck.UseUnderline = true;
 			this.hbox3.Add (this.startAppMaximizedCheck);
-			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.startAppMaximizedCheck]));
-			w9.Position = 0;
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.startAppMaximizedCheck]));
+			w10.Position = 0;
 			// Container child hbox3.Gtk.Box+BoxChild
 			this.resetDatabaseBtn = new global::Gtk.Button ();
 			this.resetDatabaseBtn.CanFocus = true;
 			this.resetDatabaseBtn.Name = "resetDatabaseBtn";
 			this.resetDatabaseBtn.UseUnderline = true;
 			this.resetDatabaseBtn.Label = "Reset Database";
-			global::Gtk.Image w10 = new global::Gtk.Image ();
-			w10.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-undo", global::Gtk.IconSize.Menu);
-			this.resetDatabaseBtn.Image = w10;
+			global::Gtk.Image w11 = new global::Gtk.Image ();
+			w11.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-undo", global::Gtk.IconSize.Menu);
+			this.resetDatabaseBtn.Image = w11;
 			this.hbox3.Add (this.resetDatabaseBtn);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.resetDatabaseBtn]));
-			w11.Position = 1;
-			w11.Expand = false;
-			w11.Fill = false;
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.resetDatabaseBtn]));
+			w12.Position = 1;
+			w12.Expand = false;
+			w12.Fill = false;
 			// Container child hbox3.Gtk.Box+BoxChild
 			this.button21 = new global::Gtk.Button ();
 			this.button21.CanFocus = true;
 			this.button21.Name = "button21";
 			this.button21.UseUnderline = true;
 			this.button21.Label = "Save Settings";
-			global::Gtk.Image w12 = new global::Gtk.Image ();
-			w12.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-save", global::Gtk.IconSize.Menu);
-			this.button21.Image = w12;
+			global::Gtk.Image w13 = new global::Gtk.Image ();
+			w13.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-save", global::Gtk.IconSize.Menu);
+			this.button21.Image = w13;
 			this.hbox3.Add (this.button21);
-			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.button21]));
-			w13.Position = 2;
-			w13.Expand = false;
-			w13.Fill = false;
-			this.vbox2.Add (this.hbox3);
-			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.button21]));
 			w14.Position = 2;
 			w14.Expand = false;
 			w14.Fill = false;
+			this.vbox2.Add (this.hbox3);
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+			w15.Position = 3;
+			w15.Expand = false;
+			w15.Fill = false;
 			this.notebook1.Add (this.vbox2);
 			// Notebook tab
 			this.label1 = new global::Gtk.Label ();
@@ -188,6 +199,7 @@ namespace Gtktester
 			this.DefaultWidth = 646;
 			this.DefaultHeight = 318;
 			this.Show ();
+			this.lunaLuaDirEntry.Changed += new global::System.EventHandler (this.OnLunaLuaDirEntryChanged);
 			this.button41.Clicked += new global::System.EventHandler (this.OnButton41Clicked);
 			this.resetDatabaseBtn.Clicked += new global::System.EventHandler (this.OnResetDatabaseBtnClicked);
 			this.button21.Clicked += new global::System.EventHandler (this.OnButton21Clicked);
