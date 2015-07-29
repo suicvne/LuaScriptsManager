@@ -53,6 +53,20 @@ namespace Gtktester
             PopulateInfo();
         }
 
+        public BugReporter(string additionalCommentsText) : base(Gtk.WindowType.Toplevel)
+        {
+            SysInfo = new SystemInformation();
+            this.Build();
+
+            PopulateInfo();
+            textview2.Buffer.Text = additionalCommentsText;
+        }
+
+        public void SetAdditionalCommentsText(string text)
+        {
+            textview2.Buffer.Text = text;
+        }
+
         private void PopulateInfo()
         {
             string InformationAsString = String.Format(

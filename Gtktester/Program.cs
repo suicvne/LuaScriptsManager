@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define testing
+using System;
 using Gtk;
 using System.IO;
 using Newtonsoft.Json;
@@ -6,9 +7,12 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using MonoDevelop.Core;
 using System.Diagnostics;
+using System.Net;
+using System.Collections.Generic;
 
 namespace Gtktester
 {
+    
     public class Program
 	{
         public static Settings ProgramSettings = new Settings();
@@ -19,6 +23,10 @@ namespace Gtktester
 
 		public static void Main (string[] args)
 		{
+            
+            #if testing
+            TestWohlJson();
+            #else
             if (Internals.CurrentOS == InternalOperatingSystem.Windows)
                 Console.WriteLine("Gtk: {0}", CheckWindowsGtk());
 
@@ -53,7 +61,27 @@ namespace Gtktester
                 win.Show ();
             }
 			Application.Run ();
+            #endif
 		}
+
+        private static void TestWohlJson()
+        {
+            WohlJsonObj wohl = new WohlJsonObj();
+
+            using (WebClient wc = new WebClient())
+            {
+                string json = wc.DownloadString("http://engine.wohlnet.ru/LunaLua/get.php?showversions");
+                if (json != null)
+                {
+                    wohl = JsonConvert.DeserializeObject<WohlJsonObj>(json);
+                }
+            }
+            Console.WriteLine("latest: {0}\n\n", wohl.latest);
+            foreach (var ver in wohl.versions)
+            {
+                Console.WriteLine("id: {0}, version: {1}", ver.id, ver.version);
+            }
+        }
 
         [System.Runtime.InteropServices.DllImport("kernel32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
         [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]

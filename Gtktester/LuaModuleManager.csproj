@@ -50,6 +50,9 @@
     <Reference Include="MonoDevelop.Core">
       <HintPath>Necessary Libraries\MonoDevelop.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.5\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -91,10 +94,14 @@
     <Compile Include="gtk-gui\Gtktester.AskForLunaLuaWindow.cs" />
     <Compile Include="BugReporter.cs" />
     <Compile Include="gtk-gui\Gtktester.BugReporter.cs" />
+    <Compile Include="Wohlhabend-Networks\WohlVersion.cs" />
+    <Compile Include="LunaLuaInformation.cs" />
+    <Compile Include="gtk-gui\Gtktester.LunaLuaInformation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Internal\" />
+    <Folder Include="Wohlhabend-Networks\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

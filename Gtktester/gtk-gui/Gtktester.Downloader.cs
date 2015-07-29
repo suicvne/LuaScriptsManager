@@ -17,7 +17,8 @@ namespace Gtktester
 			this.Name = "Gtktester.Downloader";
 			this.Title = "Downloader";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("Gtktester.Icons.PNG.32.png");
-			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.TypeHint = ((global::Gdk.WindowTypeHint)(1));
+			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			this.Modal = true;
 			this.Resizable = false;
 			this.AllowGrow = false;
@@ -29,7 +30,7 @@ namespace Gtktester
 			this.progressbar1 = new global::Gtk.ProgressBar ();
 			this.progressbar1.WidthRequest = 470;
 			this.progressbar1.Name = "progressbar1";
-			this.progressbar1.Text = "TODO: 0kb/100kb";
+			this.progressbar1.Text = "0kb/100kb";
 			this.fixed1.Add (this.progressbar1);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.progressbar1]));
 			w1.X = 20;

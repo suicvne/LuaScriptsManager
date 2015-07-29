@@ -8,13 +8,36 @@ using Gtk;
 using Internals;
 using System.IO;
 using System.IO.Compression;
+using System.Threading;
 
 namespace Gtktester
 {
+    public static class ZipArchiveExtensions
+    {
+        public static void ExtractToDirectory(this ZipArchive archive, string destinationDirectoryName, bool overwrite)
+        {
+            if (!overwrite)
+            {
+                archive.ExtractToDirectory(destinationDirectoryName);
+                return;
+            }
+            foreach (ZipArchiveEntry file in archive.Entries)
+            {
+                string completeFileName = Path.Combine(destinationDirectoryName, file.FullName);
+                if (file.Name == "")
+                {// Assuming Empty for Directory
+                    Directory.CreateDirectory(Path.GetDirectoryName(completeFileName));
+                    continue;
+                }
+                file.ExtractToFile(completeFileName, true);
+            }
+        }
+    }
+    
     public partial class Downloader : Gtk.Window
     {
-        private string _URL, _location;
-        private bool _extractNeeded;
+        private string _URL, _location, _extractTo;
+        private bool _extractNeeded, _extractingLunaLua;
 
         public bool Downloading {get;set;}
 
@@ -40,6 +63,15 @@ namespace Gtktester
             _URL = URL;
             _location = location;
             _extractNeeded = extractNeeded;
+            this.Build();
+        }
+
+        public Downloader(string URL, string location, bool extracingLunaLua, string extractTo) : base(Gtk.WindowType.Toplevel)
+        {
+            _URL = URL;
+            _location = location;
+            _extractingLunaLua = extracingLunaLua;
+            _extractTo = extractTo;
             this.Build();
         }
 
@@ -88,16 +120,54 @@ namespace Gtktester
                             }
                             File.Delete(_location);
                         }
+                        if(_extractingLunaLua)
+                        {
+                            progressbar1.Text = "Extracting...";
+                            speedLabel.Text = "";
+
+                            if (!Directory.Exists(_extractTo))
+                                Directory.CreateDirectory(_extractTo);
+                            try
+                            {
+                                using(Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip"))
+                                {
+                                    zip.ExtractAll(_extractTo, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                                }
+                            }
+                            catch(Exception ex)
+                            {
+                                Console.WriteLine("ERROR: " + ex.Message);
+                                BugReporter br = new BugReporter(String.Format("LunaLua Module Manager crashed while download LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                                br.Show();
+                            }
+                        }
                         //MessageDialog mdd = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Download complete!");
                         //mdd.Run();
                         //mdd.Destroy();
                         this.Destroy();
+
                     };
                 webClient.DownloadProgressChanged += (object sender, DownloadProgressChangedEventArgs e) => 
                     {
-                        speedLabel.Text = String.Format("{0} mb/s", (e.BytesReceived / 1024d / 1024d / stopWatch.Elapsed.TotalSeconds));
-                        progressbar1.Fraction = e.ProgressPercentage;
-                        progressbar1.Text = String.Format("{0} kb / {1} kb", (e.BytesReceived / 1024d).ToString("0.00"), (e.TotalBytesToReceive / 1024d).ToString("0.00"));
+                        DateTime lastUpdateTime = DateTime.Now;
+                        var sc = SynchronizationContext.Current;
+                        Gtk.Application.Invoke(
+                            delegate 
+                            {
+                                //DateTime now = DateTime.Now;
+                                //double sizeDiff = e.TotalBytesToReceive - e.BytesReceived;
+                                //double timeDiff = stopWatch.ElapsedMilliseconds;
+                                //TimeSpan interval = now - lastUpdateTime;
+
+                                //decimal curSpeed = decimal.Round((decimal)(sizeDiff / timeDiff) / 1000, 2, MidpointRounding.AwayFromZero);
+                                //speedLabel.Text = String.Format("{0} mb/s", curSpeed);
+                                //Console.WriteLine(Convert.ToDouble(Convert.ToDouble(e.ProgressPercentage + ".0") / Convert.ToDouble(100.0)));
+                                progressbar1.Fraction = Convert.ToDouble(Convert.ToDouble(e.ProgressPercentage + ".0") / Convert.ToDouble(100.0));
+                                progressbar1.Text = String.Format("{0} kb / {1} kb", (e.BytesReceived / 1024d).ToString("0.00"), (e.TotalBytesToReceive / 1024d).ToString("0.00"));
+
+                                //lastUpdateTime = now;
+                            });
+                       
 
                     };
 

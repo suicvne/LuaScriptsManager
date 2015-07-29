@@ -15,6 +15,7 @@ public partial class MainWindow: Gtk.Window
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
+        
         CheckForUpdatesProgress cfup = new CheckForUpdatesProgress(Assembly.GetExecutingAssembly().GetName().Version);
         cfup.Show();
         if (cfup.CheckForUpdates() == false)
@@ -28,6 +29,8 @@ public partial class MainWindow: Gtk.Window
         this.hpaned2.Position = 170;
 
         OnWindowLoad();
+
+        this.notebook1.CurrentPage = 0;
 	}
 
     private void OnWindowLoad()
@@ -123,7 +126,8 @@ public partial class MainWindow: Gtk.Window
         ad.Authors = new string[]
             {
                 "Mike Santiago", "\n--Special Thanks to the Beta Testers :)--", "Xerx/Blank - Windows 8.1\nMarinite - Windows 7\nEnjl - Windows 7\nglitch4\nbossedit8",
-                "\n\nSpecial Thank you to Kevsoft for developing LunaLua", 
+                "\n\nSpecial Thank you to Wohlstand for hosting LunaLua" +
+                "\nSpecial Thank you to Kevsoft for developing LunaLua", 
                 "\n\n--3rd Party Libraries Used--",
                 "Json.NET by Newtonsoft - http://www.newtonsoft.com/json\n  Licensed under the MIT License (MIT)",
                 "MonoDevelop.Core by Xamarin/Mono - http://www.github.com/mono/monodevelop"
@@ -150,14 +154,6 @@ THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
 
     protected void OnPreferencesActionActivated (object sender, EventArgs e)
     {
-        /*MessageDialog md = new MessageDialog(null, 
-            DialogFlags.Modal, 
-            MessageType.Question, 
-            ButtonsType.Ok, 
-            @"Work in progress! Stay patient please!");
-        md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
-        md.Run();
-        md.Destroy();*/
         SettingsUI s = new SettingsUI();
         s.Parent = this;
         s.Show();

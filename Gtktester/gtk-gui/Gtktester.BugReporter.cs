@@ -42,8 +42,8 @@ namespace Gtktester
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = "The following information will be sent to our servers at\r\nhttp://mrmiketheripper." +
-			"x10.mx/";
+			this.label1.LabelProp = "The following information will be sent to our servers at\nhttp://mrmiketheripper.x" +
+			"10.mx/";
 			this.vbox2.Add (this.label1);
 			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.label1]));
 			w1.Position = 0;
@@ -65,8 +65,8 @@ namespace Gtktester
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = "If you\'d like, please enter any additional comments such as\r\n-Name\r\n-Description " +
-			"of problem\r\n-Other comments";
+			this.label2.LabelProp = "If you\'d like, please enter any additional comments such as\n-Name\n-Description of" +
+			" problem\n-Other comments";
 			this.vbox2.Add (this.label2);
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.label2]));
 			w4.Position = 2;

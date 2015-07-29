@@ -5,6 +5,7 @@ using System;
 using Gtk;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 
 namespace Gtktester
 {
@@ -32,13 +33,14 @@ namespace Gtktester
 
         protected void OnButton2Clicked (object sender, EventArgs e)
         {
+            //http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1
             if (Internals.CurrentOS == InternalOperatingSystem.Linux)
             {
                 MessageDialog md = new MessageDialog(null, 
-                    DialogFlags.Modal, 
-                    MessageType.Question, 
-                    ButtonsType.YesNo, 
-                    "It is highly recommended that you use my PlayOnLinux script for direct support from me\nregarding running LunaLua under Linux.\n\nWould you like to get my PlayOnLinux script? \n(Hitting no will bring you to the manual LunaLua download)");
+                                       DialogFlags.Modal, 
+                                       MessageType.Question, 
+                                       ButtonsType.YesNo, 
+                                       "It is highly recommended that you use my PlayOnLinux script for direct support from me\nregarding running LunaLua under Linux.\n\nWould you like to get my PlayOnLinux script? \n(Hitting no will bring you to the manual LunaLua download)");
                 md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
                 int returnVal = md.Run();
                 if (returnVal == -8)
@@ -49,6 +51,34 @@ namespace Gtktester
                     Process.Start("http://engine.wohlnet.ru/LunaLua");
                 Console.WriteLine(returnVal);
                 md.Destroy();
+            }
+            else if (Internals.CurrentOS == InternalOperatingSystem.Windows)
+            {
+                string extractTo = @"C:\SMBX";
+                if (entry1.Text.Trim() == "")
+                {
+                    MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, 
+                                           ButtonsType.OkCancel, "You've left the LunaLua Directory blank. By doing this, LunaLua will be installed to 'C:\\SMBX'.\n\nIf this is not okay, please click cancel and select the path you'd like to download LunaLua to.");
+                    md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+                    md.WindowPosition = WindowPosition.Center;
+                    ResponseType res = (ResponseType)md.Run();
+                    md.Destroy();
+                    if (res == ResponseType.Ok)
+                    {
+                    }
+                    else
+                        return;
+                }
+                else
+                    extractTo = entry1.Text;
+
+                if (!Directory.Exists(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp"))
+                    Directory.CreateDirectory(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
+                //Downloader d = new Downloader("http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip");
+                Downloader d = new Downloader("http://download.gna.org/pgewohlstand/dev/win32/LunaLUA/LunaLUA_0.7.0.3-beta_smbx13_sfx_mus_fullgame.zip", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip", true, extractTo);
+                d.BeginDownload();
+
+                entry1.Text = extractTo;
             }
         }
 

@@ -19,6 +19,8 @@ public partial class MainWindow
 	
 	private global::Gtk.MenuBar menubar1;
 	
+	private global::Gtk.Notebook notebook1;
+	
 	private global::Gtk.HPaned hpaned2;
 	
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
@@ -26,6 +28,10 @@ public partial class MainWindow
 	private global::Gtk.TreeView treeview1;
 	
 	private global::Gtktester.InformationView informationview1;
+	
+	private global::Gtk.Label label1;
+	
+	private global::Gtk.Label label2;
 
 	protected virtual void Build ()
 	{
@@ -60,7 +66,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/><menuitem name='convertAction' action='convertAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='LunaLuaModuleManagerAction' action='LunaLuaModuleManagerAction'><menuitem name='dialogInfoAction' action='dialogInfoAction'/><menuitem name='preferencesAction' action='preferencesAction'/><menuitem name='quitAction' action='quitAction'/><menuitem name='convertAction' action='convertAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -69,10 +75,16 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.notebook1 = new global::Gtk.Notebook ();
+		this.notebook1.CanFocus = true;
+		this.notebook1.Name = "notebook1";
+		this.notebook1.CurrentPage = 0;
+		this.notebook1.TabPos = ((global::Gtk.PositionType)(3));
+		// Container child notebook1.Gtk.Notebook+NotebookChild
 		this.hpaned2 = new global::Gtk.HPaned ();
 		this.hpaned2.CanFocus = true;
 		this.hpaned2.Name = "hpaned2";
-		this.hpaned2.Position = 167;
+		this.hpaned2.Position = 1;
 		// Container child hpaned2.Gtk.Paned+PanedChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow.WidthRequest = 250;
@@ -92,9 +104,25 @@ public partial class MainWindow
 		this.informationview1.Events = ((global::Gdk.EventMask)(256));
 		this.informationview1.Name = "informationview1";
 		this.hpaned2.Add (this.informationview1);
-		this.vbox1.Add (this.hpaned2);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned2]));
-		w6.Position = 1;
+		this.notebook1.Add (this.hpaned2);
+		// Notebook tab
+		this.label1 = new global::Gtk.Label ();
+		this.label1.Name = "label1";
+		this.label1.LabelProp = "LunaLua Scripts";
+		this.notebook1.SetTabLabel (this.hpaned2, this.label1);
+		this.label1.ShowAll ();
+		// Notebook tab
+		global::Gtk.Label w7 = new global::Gtk.Label ();
+		w7.Visible = true;
+		this.notebook1.Add (w7);
+		this.label2 = new global::Gtk.Label ();
+		this.label2.Name = "label2";
+		this.label2.LabelProp = "LunaLua";
+		this.notebook1.SetTabLabel (w7, this.label2);
+		this.label2.ShowAll ();
+		this.vbox1.Add (this.notebook1);
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.notebook1]));
+		w8.Position = 1;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
