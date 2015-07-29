@@ -12,6 +12,7 @@
     <ApplicationIcon>Icons\ico.ico</ApplicationIcon>
     <ReleaseVersion>0.7.0.2</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
+    <UseMSBuildEngine>False</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
