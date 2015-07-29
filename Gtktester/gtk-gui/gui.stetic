@@ -622,6 +622,7 @@ If you already have it, please select the directory it resides in.</property>
                     <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
                     <property name="InvisibleChar">●</property>
+                    <signal name="Changed" handler="OnLunaLuaDirEntryChanged" />
                   </widget>
                   <packing>
                     <property name="Position">1</property>
@@ -648,6 +649,18 @@ If you already have it, please select the directory it resides in.</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="lblLunaLuaVersion">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">LunaLua Version: </property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -685,7 +698,7 @@ If you already have it, please select the directory it resides in.</property>
                 </child>
               </widget>
               <packing>
-                <property name="Position">1</property>
+                <property name="Position">2</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -745,7 +758,7 @@ If you already have it, please select the directory it resides in.</property>
                 </child>
               </widget>
               <packing>
-                <property name="Position">2</property>
+                <property name="Position">3</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>

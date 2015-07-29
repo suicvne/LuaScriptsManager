@@ -26,6 +26,9 @@ namespace Gtktester
         {
             this.Build();
 
+            installUpdateButton.Sensitive = false;
+            webButton.Sensitive = false;
+
             SetFonts();
         }
         private void SetFonts()

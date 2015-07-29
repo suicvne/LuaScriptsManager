@@ -24,7 +24,7 @@ namespace Gtktester
         {
             #if __MonoCS__
             this.CompiledOnMono = true;
-            #elif
+            #else
             this.CompiledOnMono = false;
             #endif
 
