@@ -22,6 +22,7 @@ namespace Gtktester
         public string ConfigDirectory { get; set; }
         public string LunaLuaDirectory {get;set;}
         public string DatabaseURL { get; set; }
+        public string WohlstandJSON { get; set;}
         public bool StartMaximized { get; set; }
 
         public Settings()
@@ -53,6 +54,7 @@ namespace Gtktester
 
             //Create defaults
             DatabaseURL = "http://mrmiketheripper.x10.mx/luamodulemanager/test.json";
+            WohlstandJSON = "http://engine.wohlnet.ru/LunaLua/get.php?showversions";
             LunaLuaDirectory = null;
             StartMaximized = false;
         }

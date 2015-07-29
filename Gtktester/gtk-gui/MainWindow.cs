@@ -31,6 +31,14 @@ public partial class MainWindow
 	
 	private global::Gtk.Label label1;
 	
+	private global::Gtk.HPaned hpaned1;
+	
+	private global::Gtk.ScrolledWindow GtkScrolledWindow2;
+	
+	private global::Gtk.TreeView lunaLuaVersionsTree;
+	
+	private global::Gtktester.LunaLuaInformation lunaluainformation1;
+	
 	private global::Gtk.Label label2;
 
 	protected virtual void Build ()
@@ -78,7 +86,7 @@ public partial class MainWindow
 		this.notebook1 = new global::Gtk.Notebook ();
 		this.notebook1.CanFocus = true;
 		this.notebook1.Name = "notebook1";
-		this.notebook1.CurrentPage = 0;
+		this.notebook1.CurrentPage = 1;
 		this.notebook1.TabPos = ((global::Gtk.PositionType)(3));
 		// Container child notebook1.Gtk.Notebook+NotebookChild
 		this.hpaned2 = new global::Gtk.HPaned ();
@@ -111,18 +119,40 @@ public partial class MainWindow
 		this.label1.LabelProp = "LunaLua Scripts";
 		this.notebook1.SetTabLabel (this.hpaned2, this.label1);
 		this.label1.ShowAll ();
+		// Container child notebook1.Gtk.Notebook+NotebookChild
+		this.hpaned1 = new global::Gtk.HPaned ();
+		this.hpaned1.CanFocus = true;
+		this.hpaned1.Name = "hpaned1";
+		this.hpaned1.Position = 143;
+		// Container child hpaned1.Gtk.Paned+PanedChild
+		this.GtkScrolledWindow2 = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
+		this.GtkScrolledWindow2.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow2.Gtk.Container+ContainerChild
+		this.lunaLuaVersionsTree = new global::Gtk.TreeView ();
+		this.lunaLuaVersionsTree.CanFocus = true;
+		this.lunaLuaVersionsTree.Name = "lunaLuaVersionsTree";
+		this.GtkScrolledWindow2.Add (this.lunaLuaVersionsTree);
+		this.hpaned1.Add (this.GtkScrolledWindow2);
+		global::Gtk.Paned.PanedChild w8 = ((global::Gtk.Paned.PanedChild)(this.hpaned1 [this.GtkScrolledWindow2]));
+		w8.Resize = false;
+		// Container child hpaned1.Gtk.Paned+PanedChild
+		this.lunaluainformation1 = new global::Gtktester.LunaLuaInformation ();
+		this.lunaluainformation1.Events = ((global::Gdk.EventMask)(256));
+		this.lunaluainformation1.Name = "lunaluainformation1";
+		this.hpaned1.Add (this.lunaluainformation1);
+		this.notebook1.Add (this.hpaned1);
+		global::Gtk.Notebook.NotebookChild w10 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.hpaned1]));
+		w10.Position = 1;
 		// Notebook tab
-		global::Gtk.Label w7 = new global::Gtk.Label ();
-		w7.Visible = true;
-		this.notebook1.Add (w7);
 		this.label2 = new global::Gtk.Label ();
 		this.label2.Name = "label2";
 		this.label2.LabelProp = "LunaLua";
-		this.notebook1.SetTabLabel (w7, this.label2);
+		this.notebook1.SetTabLabel (this.hpaned1, this.label2);
 		this.label2.ShowAll ();
 		this.vbox1.Add (this.notebook1);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.notebook1]));
-		w8.Position = 1;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.notebook1]));
+		w11.Position = 1;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();

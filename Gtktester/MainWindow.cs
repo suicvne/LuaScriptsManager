@@ -11,6 +11,7 @@ using Gtktester;
 public partial class MainWindow: Gtk.Window
 {
     private List<LuaModuleManager.LuaModule> example = new List<LuaModuleManager.LuaModule>();
+    private WohlJsonObj wohl = new WohlJsonObj();
 
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
@@ -27,6 +28,7 @@ public partial class MainWindow: Gtk.Window
             this.Maximize();
 
         this.hpaned2.Position = 170;
+
 
         OnWindowLoad();
 
@@ -59,6 +61,53 @@ public partial class MainWindow: Gtk.Window
             this.Destroy();
         }
 
+        try
+        {            
+            using (WebClient wc = new WebClient())
+            {
+                string json = wc.DownloadString("http://engine.wohlnet.ru/LunaLua/get.php?showversions");
+                if (json != null)
+                {
+                    wohl = JsonConvert.DeserializeObject<WohlJsonObj>(json);
+                    LoadWohlDatabase();
+                }
+            }
+        }
+        catch(Exception ex)
+        {
+            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
+                "Error loading database from: {0}\n\n{1}\nPlease contact miketheripper1@gmail.com with this information!", Program.ProgramSettings.WohlstandJSON, ex.Message);
+            md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+            md.WindowPosition = WindowPosition.Center;
+            md.Run();
+            md.Destroy();
+            this.Destroy();
+        }
+    }
+
+    private void InitLunaLuaTreeView()
+    {
+        Gtk.TreeViewColumn c = new TreeViewColumn();
+        c.Title = "LunaLua Version";
+        lunaLuaVersionsTree.AppendColumn(c);
+
+        Gtk.CellRendererText scriptTitleCell = new CellRendererText();
+        c.PackStart(scriptTitleCell, true);
+        c.AddAttribute(scriptTitleCell, "text", 0);
+    }
+    private void LoadWohlDatabase()
+    {
+        Gtk.TreeStore model = new Gtk.TreeStore(typeof(string));
+        Gtk.TreeIter iter = model.AppendValues("Latest");
+        model.AppendValues(iter, wohl.latest);
+
+        iter = model.AppendValues("Older Versions");
+        foreach (var ver in wohl.versions)
+        {
+            model.AppendValues(iter, ver.version.ToString());
+        }
+        this.lunaLuaVersionsTree.Model = model;
+        InitLunaLuaTreeView();
     }
 
     private void InitTreeView()
@@ -78,7 +127,6 @@ public partial class MainWindow: Gtk.Window
 
     private void LoadDatabaseIntoTreeview()
     {
-
         Gtk.ListStore model = new Gtk.ListStore(typeof(string));
         foreach (var module in example)
         {

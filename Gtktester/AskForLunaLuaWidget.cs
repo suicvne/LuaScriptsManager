@@ -74,8 +74,7 @@ namespace Gtktester
 
                 if (!Directory.Exists(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp"))
                     Directory.CreateDirectory(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
-                //Downloader d = new Downloader("http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip");
-                Downloader d = new Downloader("http://download.gna.org/pgewohlstand/dev/win32/LunaLUA/LunaLUA_0.7.0.3-beta_smbx13_sfx_mus_fullgame.zip", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip", true, extractTo);
+                Downloader d = new Downloader("http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip", true, extractTo);
                 d.BeginDownload();
 
                 entry1.Text = extractTo;
