@@ -8,7 +8,11 @@ namespace Gtktester
 		
 		private global::Gtk.Label curLunaLuaVersion;
 		
+		private global::Gtk.HBox hbox1;
+		
 		private global::Gtk.Button button17;
+		
+		private global::Gtk.Button button37;
 
 		protected virtual void Build ()
 		{
@@ -30,21 +34,43 @@ namespace Gtktester
 			w1.Expand = false;
 			w1.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
+			this.hbox1 = new global::Gtk.HBox ();
+			this.hbox1.Name = "hbox1";
+			this.hbox1.Spacing = 6;
+			// Container child hbox1.Gtk.Box+BoxChild
 			this.button17 = new global::Gtk.Button ();
 			this.button17.CanFocus = true;
 			this.button17.Name = "button17";
 			this.button17.UseUnderline = true;
 			this.button17.Label = "Install/Update";
-			this.vbox2.Add (this.button17);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.button17]));
-			w2.Position = 2;
+			this.hbox1.Add (this.button17);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button17]));
+			w2.Position = 1;
 			w2.Expand = false;
 			w2.Fill = false;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.button37 = new global::Gtk.Button ();
+			this.button37.CanFocus = true;
+			this.button37.Name = "button37";
+			this.button37.UseUnderline = true;
+			this.button37.Label = "Launch SMBX";
+			this.hbox1.Add (this.button37);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button37]));
+			w3.Position = 2;
+			w3.Expand = false;
+			w3.Fill = false;
+			this.vbox2.Add (this.hbox1);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox1]));
+			w4.Position = 2;
+			w4.Expand = false;
+			w4.Fill = false;
 			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.Hide ();
+			this.button17.Clicked += new global::System.EventHandler (this.OnButton17Clicked);
+			this.button37.Clicked += new global::System.EventHandler (this.OnButton37Clicked);
 		}
 	}
 }

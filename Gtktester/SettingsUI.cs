@@ -21,6 +21,7 @@ namespace Gtktester
             lunaLuaDirEntry.Text = Program.ProgramSettings.LunaLuaDirectory;
             databaseLocationEntry.Text = Program.ProgramSettings.DatabaseURL;
             startAppMaximizedCheck.Active = Program.ProgramSettings.StartMaximized;
+            enableSilentBugReporting.Active = Program.ProgramSettings.EnableSilentBugReporting;
         }
 
         private int SaveSettings()
@@ -39,6 +40,7 @@ namespace Gtktester
             }
             Program.ProgramSettings.LunaLuaDirectory = lunaLuaDirEntry.Text.Trim();
             Program.ProgramSettings.StartMaximized = startAppMaximizedCheck.Active;
+            Program.ProgramSettings.EnableSilentBugReporting = enableSilentBugReporting.Active;
             if (!System.IO.Directory.Exists(lunaLuaDirEntry.Text + System.IO.Path.DirectorySeparatorChar + "LuaScriptsLib"))
             {
                 return -1;

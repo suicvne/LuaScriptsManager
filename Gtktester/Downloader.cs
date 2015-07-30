@@ -97,15 +97,9 @@ namespace Gtktester
                                 Directory.CreateDirectory(hereIsWhereYouExtractToOhMyGod);
                             try
                             {
-                                using(ZipArchive archive = ZipFile.OpenRead(_location))
+                                using(Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(_location))
                                 {
-                                    foreach(ZipArchiveEntry entry in archive.Entries)
-                                    {
-                                        //bc apparently it's 2015 w/ .net 4.5 and this still isn't handled automatically or at least as an option
-                                        if(File.Exists(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName))
-                                            File.Delete(hereIsWhereYouExtractToOhMyGod + System.IO.Path.DirectorySeparatorChar + entry.FullName);
-                                        entry.ExtractToFile(System.IO.Path.Combine(hereIsWhereYouExtractToOhMyGod, entry.FullName));
-                                    }
+                                    zip.ExtractAll(hereIsWhereYouExtractToOhMyGod, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
                                 }
                             }
                             catch(Exception ex)
@@ -117,6 +111,12 @@ namespace Gtktester
                                 md.WindowPosition = WindowPosition.Center;
                                 md.Run();
                                 md.Destroy();
+                                if(Program.ProgramSettings.EnableSilentBugReporting)
+                                {
+                                    BugReporter br = new BugReporter();
+                                    br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while downloading LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                                    br.Destroy();
+                                }
                             }
                             File.Delete(_location);
                         }
@@ -137,13 +137,11 @@ namespace Gtktester
                             catch(Exception ex)
                             {
                                 Console.WriteLine("ERROR: " + ex.Message);
-                                BugReporter br = new BugReporter(String.Format("LunaLua Module Manager crashed while download LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
-                                br.Show();
+                                BugReporter br = new BugReporter();
+                                br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while download LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                                br.Destroy();
                             }
                         }
-                        //MessageDialog mdd = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Download complete!");
-                        //mdd.Run();
-                        //mdd.Destroy();
                         this.Destroy();
 
                     };
@@ -182,11 +180,18 @@ namespace Gtktester
                 catch(Exception ex)
                 {
                     MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
-                        "Error Downloading File\n\n{0}\nPlease contact miketheripper1@gmail.com with this information!", ex.Message);
+                        "Error Downloading File\n\n{0}", ex.Message);
                     md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
                     md.WindowPosition = WindowPosition.Center;
                     md.Run();
                     md.Destroy();
+                    if (Program.ProgramSettings.EnableSilentBugReporting)
+                    {
+                        BugReporter br = new BugReporter();
+                        br.SubmitSilentBugReport(String.Format("An error ocurred while downloading a file" +
+                            ": {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                        br.Destroy();
+                    }
                 }
 
             }

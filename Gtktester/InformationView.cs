@@ -87,11 +87,18 @@ namespace Gtktester
                 catch(Exception ex)
                 {
                     MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
-                        "Error\n" + ex.Message + "\n\nPlease email miketheripper1@gmail.com with this information!");
+                        "Error\n" + ex.Message);
                     md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
                     md.WindowPosition = WindowPosition.Center;
                     md.Run();
                     md.Destroy();
+
+                    if (Program.ProgramSettings.EnableSilentBugReporting)
+                    {
+                        BugReporter br = new BugReporter();
+                        br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the script: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                        br.Destroy();
+                    }
                 }
             }
 

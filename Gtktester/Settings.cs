@@ -24,6 +24,7 @@ namespace Gtktester
         public string DatabaseURL { get; set; }
         public string WohlstandJSON { get; set;}
         public bool StartMaximized { get; set; }
+        public bool EnableSilentBugReporting { get; set; }
 
         public Settings()
         {
@@ -73,12 +74,19 @@ namespace Gtktester
                         DialogFlags.Modal, 
                         MessageType.Error, 
                         ButtonsType.Ok, 
-                        "Could not create configuration directory at '{0}'!\nPlease contact miketheripper1@gmail.com with this information!", 
+                        "Could not create configuration directory at '{0}'!", 
                         ConfigDirectory);
                     md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
                     md.WindowPosition = WindowPosition.Center;
                     md.Run();
                     md.Destroy();
+
+                    if (Program.ProgramSettings.EnableSilentBugReporting)
+                    {
+                        BugReporter br = new BugReporter();
+                        br.SubmitSilentBugReport(String.Format("An error ocurred while creating configuration directory at: {0}\nMessage: {1}\n\nStack Trace: {2}", ConfigDirectory, ex.Message, ex.StackTrace));
+                        br.Destroy();
+                    }
                 }
             }
         }

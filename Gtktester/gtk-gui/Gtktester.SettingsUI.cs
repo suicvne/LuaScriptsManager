@@ -28,6 +28,8 @@ namespace Gtktester
 		
 		private global::Gtk.CheckButton startAppMaximizedCheck;
 		
+		private global::Gtk.CheckButton enableSilentBugReporting;
+		
 		private global::Gtk.Button resetDatabaseBtn;
 		
 		private global::Gtk.Button button21;
@@ -153,38 +155,58 @@ namespace Gtktester
 			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.startAppMaximizedCheck]));
 			w10.Position = 0;
 			// Container child hbox3.Gtk.Box+BoxChild
+			this.enableSilentBugReporting = new global::Gtk.CheckButton ();
+			this.enableSilentBugReporting.TooltipMarkup = @"On error, the LunaLua Module Manager will automatically collect and send data to our servers at
+mrmiketheripper.x10.mx.
+
+The collected data includes
+-Mono version
+-Running on Mono/Compiled on Mono
+-OS name/version
+-64 bit
+
+In addition, a stack trace and error message will be sent. This is done automatically and silently if this option is enabled.";
+			this.enableSilentBugReporting.CanFocus = true;
+			this.enableSilentBugReporting.Name = "enableSilentBugReporting";
+			this.enableSilentBugReporting.Label = "Enable Silent Bug Reporting";
+			this.enableSilentBugReporting.DrawIndicator = true;
+			this.enableSilentBugReporting.UseUnderline = true;
+			this.hbox3.Add (this.enableSilentBugReporting);
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.enableSilentBugReporting]));
+			w11.Position = 1;
+			// Container child hbox3.Gtk.Box+BoxChild
 			this.resetDatabaseBtn = new global::Gtk.Button ();
 			this.resetDatabaseBtn.CanFocus = true;
 			this.resetDatabaseBtn.Name = "resetDatabaseBtn";
 			this.resetDatabaseBtn.UseUnderline = true;
 			this.resetDatabaseBtn.Label = "Reset Database";
-			global::Gtk.Image w11 = new global::Gtk.Image ();
-			w11.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-undo", global::Gtk.IconSize.Menu);
-			this.resetDatabaseBtn.Image = w11;
+			global::Gtk.Image w12 = new global::Gtk.Image ();
+			w12.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-undo", global::Gtk.IconSize.Menu);
+			this.resetDatabaseBtn.Image = w12;
 			this.hbox3.Add (this.resetDatabaseBtn);
-			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.resetDatabaseBtn]));
-			w12.Position = 1;
-			w12.Expand = false;
-			w12.Fill = false;
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.resetDatabaseBtn]));
+			w13.Position = 2;
+			w13.Expand = false;
+			w13.Fill = false;
 			// Container child hbox3.Gtk.Box+BoxChild
 			this.button21 = new global::Gtk.Button ();
 			this.button21.CanFocus = true;
 			this.button21.Name = "button21";
 			this.button21.UseUnderline = true;
 			this.button21.Label = "Save Settings";
-			global::Gtk.Image w13 = new global::Gtk.Image ();
-			w13.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-save", global::Gtk.IconSize.Menu);
-			this.button21.Image = w13;
+			global::Gtk.Image w14 = new global::Gtk.Image ();
+			w14.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-save", global::Gtk.IconSize.Menu);
+			this.button21.Image = w14;
 			this.hbox3.Add (this.button21);
-			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.button21]));
-			w14.Position = 2;
-			w14.Expand = false;
-			w14.Fill = false;
-			this.vbox2.Add (this.hbox3);
-			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.button21]));
 			w15.Position = 3;
 			w15.Expand = false;
 			w15.Fill = false;
+			this.vbox2.Add (this.hbox3);
+			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+			w16.Position = 3;
+			w16.Expand = false;
+			w16.Fill = false;
 			this.notebook1.Add (this.vbox2);
 			// Notebook tab
 			this.label1 = new global::Gtk.Label ();

@@ -55,12 +55,20 @@ public partial class MainWindow: Gtk.Window
         catch(Exception ex)
         {
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
-                "Error loading database from: {0}\n\n{1}\nPlease contact miketheripper1@gmail.com with this information!", Program.ProgramSettings.DatabaseURL, ex.Message);
+                "Error loading database from: {0}\n\n{1}", Program.ProgramSettings.DatabaseURL, ex.Message);
             md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
             md.WindowPosition = WindowPosition.Center;
             md.Run();
             md.Destroy();
-            this.Destroy();
+
+            if (Program.ProgramSettings.EnableSilentBugReporting)
+            {
+                BugReporter br = new BugReporter();
+                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nMessage: {1}\n\nStack Trace: {2}", Program.ProgramSettings.DatabaseURL, ex.Message, ex.StackTrace));
+                br.Destroy();
+            }
+
+            Environment.Exit(-3);
         }
 
         try
@@ -80,12 +88,20 @@ public partial class MainWindow: Gtk.Window
         catch(Exception ex)
         {
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
-                "Error loading database from: {0}\n\n{1}\nPlease contact miketheripper1@gmail.com with this information!", Program.ProgramSettings.WohlstandJSON, ex.Message);
+                "Error loading database from: {0}\n\n{1}", Program.ProgramSettings.WohlstandJSON, ex.Message);
             md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
             md.WindowPosition = WindowPosition.Center;
             md.Run();
             md.Destroy();
-            this.Destroy();
+
+            if (Program.ProgramSettings.EnableSilentBugReporting)
+            {
+                BugReporter br = new BugReporter();
+                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nMessage: {1}\nStack Trace: {2}", Program.ProgramSettings.WohlstandJSON, ex.Message, ex.StackTrace));
+                br.Destroy();
+            }
+
+            Environment.Exit(-4);
         }
     }
 
@@ -230,11 +246,20 @@ THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
                 {
                     var match = wohl.versions.FirstOrDefault(x => x.version.Equals(curSelected));
                     //this.lunaluainformation1
-                    lunaluainformation1.wohlId = match.id;
+                    if (match == null)
+                    {
+                        lunaluainformation1.SetWohlID(-1);
+                    }
+                    else
+                        lunaluainformation1.SetWohlID(match.id);
                 }
-                catch{
+                catch
+                {
+                    lunaluainformation1.SetDownloadButtonEnabled(false);
                 }
             }
+            else
+                lunaluainformation1.SetDownloadButtonEnabled(false);
 
             //var match = wohl.versions.FirstOrDefault(x => x.ScriptName.Equals(model.GetValue(iter, 0).ToString()));
             //this.informationview1.SetAllData(match);

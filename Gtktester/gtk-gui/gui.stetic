@@ -784,6 +784,30 @@ If you already have it, please select the directory it resides in.</property>
                   </packing>
                 </child>
                 <child>
+                  <widget class="Gtk.CheckButton" id="enableSilentBugReporting">
+                    <property name="MemberName" />
+                    <property name="Tooltip">On error, the LunaLua Module Manager will automatically collect and send data to our servers at
+mrmiketheripper.x10.mx.
+
+The collected data includes
+-Mono version
+-Running on Mono/Compiled on Mono
+-OS name/version
+-64 bit
+
+In addition, a stack trace and error message will be sent. This is done automatically and silently if this option is enabled.</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Label">Enable Silent Bug Reporting</property>
+                    <property name="DrawIndicator">True</property>
+                    <property name="HasLabel">True</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+                <child>
                   <widget class="Gtk.Button" id="resetDatabaseBtn">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
@@ -794,7 +818,7 @@ If you already have it, please select the directory it resides in.</property>
                     <signal name="Clicked" handler="OnResetDatabaseBtnClicked" />
                   </widget>
                   <packing>
-                    <property name="Position">1</property>
+                    <property name="Position">2</property>
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
@@ -811,7 +835,7 @@ If you already have it, please select the directory it resides in.</property>
                     <signal name="Clicked" handler="OnButton21Clicked" />
                   </widget>
                   <packing>
-                    <property name="Position">2</property>
+                    <property name="Position">3</property>
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
@@ -1050,12 +1074,44 @@ http://mrmiketheripper.x10.mx/</property>
           <placeholder />
         </child>
         <child>
-          <widget class="Gtk.Button" id="button17">
+          <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Install/Update</property>
-            <property name="UseUnderline">True</property>
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button17">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Install/Update</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButton17Clicked" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button37">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Launch SMBX</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButton37Clicked" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="Position">2</property>

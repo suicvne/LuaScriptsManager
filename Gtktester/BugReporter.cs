@@ -87,6 +87,28 @@ namespace Gtktester
             Process.Start("http://www.github.com/Luigifan/LuaScriptsManager/issues");
         }
 
+        public void SubmitSilentBugReport(string additionalComments)
+        {
+            using (WebClient client = new WebClient())
+            {
+                Uri urlll = new Uri(Uri.EscapeUriString(
+                    String.Format(
+                        "http://mrmiketheripper.x10.mx/bugreports/luamodulemanager/?runningonmono={0}&compiledonmono={1}&clrversion={2}&platform={3}&osversion={4}&64bit={5}&additionalcomments={6}", 
+                        SysInfo.RunOnMono.ToString(), SysInfo.CompiledOnMono.ToString(), SysInfo.CLRVersion.ToString(), SysInfo.OS.Platform.ToString(),
+                        SysInfo.OS.Version.ToString(), SysInfo.Is64Bit.ToString(), additionalComments)
+                ));
+                #if DEBUG
+                Console.WriteLine(urlll);
+                #endif
+                string responseBody = client.DownloadString(urlll);
+
+                if (responseBody == "1Sent")
+                    Console.WriteLine("Sent bug report!");
+                else
+                    Console.WriteLine("Couldn't send bug report: {0}", responseBody);
+            }
+        }
+
         protected void OnButton15Clicked (object sender, EventArgs e)
         {
             MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.None, "Sending bug report..");
