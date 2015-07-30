@@ -154,7 +154,13 @@ namespace Gtktester
         protected void OnButton37Clicked (object sender, EventArgs e)
         {
             if (File.Exists(Program.ProgramSettings.LunaLuaDirectory + System.IO.Path.DirectorySeparatorChar + "smbx.exe"))
-                Process.Start(Program.ProgramSettings.LunaLuaDirectory + System.IO.Path.DirectorySeparatorChar + "smbx.exe");
+            {
+                Process p = new Process();
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = Program.ProgramSettings.LunaLuaDirectory + System.IO.Path.DirectorySeparatorChar + "smbx.exe";
+                psi.WorkingDirectory = Program.ProgramSettings.LunaLuaDirectory;
+                Process.Start(psi);
+            }
             else
             {
                 MessageDialog md = new MessageDialog(null, 
