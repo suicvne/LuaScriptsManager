@@ -58,6 +58,7 @@ namespace Gtktester
             WohlstandJSON = "http://engine.wohlnet.ru/LunaLua/get.php?showversions";
             LunaLuaDirectory = null;
             StartMaximized = false;
+            EnableSilentBugReporting = true;
         }
 
         private void CreateConfigDirectory()
