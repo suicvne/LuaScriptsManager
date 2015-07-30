@@ -130,7 +130,7 @@
               <widget class="Gtk.HPaned" id="hpaned1">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Position">143</property>
+                <property name="Position">1</property>
                 <child>
                   <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow2">
                     <property name="MemberName" />
@@ -140,6 +140,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="ShowScrollbars">True</property>
+                        <signal name="CursorChanged" handler="OnLunaLuaVersionsTreeCursorChanged" />
                       </widget>
                     </child>
                   </widget>
@@ -151,6 +152,7 @@
                   <widget class="Gtktester.LunaLuaInformation" id="lunaluainformation1">
                     <property name="MemberName" />
                     <property name="Events">ButtonPressMask</property>
+                    <property name="wohlId">0</property>
                   </widget>
                 </child>
               </widget>

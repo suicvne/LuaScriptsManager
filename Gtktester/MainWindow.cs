@@ -11,7 +11,8 @@ using Gtktester;
 public partial class MainWindow: Gtk.Window
 {
     private List<LuaModuleManager.LuaModule> example = new List<LuaModuleManager.LuaModule>();
-    private WohlJsonObj wohl = new WohlJsonObj();
+    public static WohlJsonObj wohl = new WohlJsonObj(); //risky..idc
+
 
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
@@ -28,6 +29,7 @@ public partial class MainWindow: Gtk.Window
             this.Maximize();
 
         this.hpaned2.Position = 170;
+        this.hpaned1.Position = 170;
 
 
         OnWindowLoad();
@@ -70,6 +72,8 @@ public partial class MainWindow: Gtk.Window
                 {
                     wohl = JsonConvert.DeserializeObject<WohlJsonObj>(json);
                     LoadWohlDatabase();
+
+                    this.lunaluainformation1.CheckForLunaDllUpdates();
                 }
             }
         }
@@ -210,5 +214,31 @@ THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
     {
         BugReporter br = new BugReporter();
         br.Show();
+    }
+
+    protected void OnLunaLuaVersionsTreeCursorChanged (object sender, EventArgs e)
+    {
+        TreeSelection selection = (sender as TreeView).Selection;
+        TreeModel model;
+        TreeIter iter;
+        if (selection.GetSelected(out model, out iter))
+        {
+            string curSelected = model.GetValue(iter, 0).ToString();
+            if (curSelected != "Latest" && curSelected != "Older Versions")
+            {
+                try
+                {
+                    var match = wohl.versions.FirstOrDefault(x => x.version.Equals(curSelected));
+                    //this.lunaluainformation1
+                    lunaluainformation1.wohlId = match.id;
+                }
+                catch{
+                }
+            }
+
+            //var match = wohl.versions.FirstOrDefault(x => x.ScriptName.Equals(model.GetValue(iter, 0).ToString()));
+            //this.informationview1.SetAllData(match);
+
+        }
     }
 }

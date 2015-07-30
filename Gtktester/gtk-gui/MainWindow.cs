@@ -123,7 +123,7 @@ public partial class MainWindow
 		this.hpaned1 = new global::Gtk.HPaned ();
 		this.hpaned1.CanFocus = true;
 		this.hpaned1.Name = "hpaned1";
-		this.hpaned1.Position = 143;
+		this.hpaned1.Position = 1;
 		// Container child hpaned1.Gtk.Paned+PanedChild
 		this.GtkScrolledWindow2 = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
@@ -140,6 +140,7 @@ public partial class MainWindow
 		this.lunaluainformation1 = new global::Gtktester.LunaLuaInformation ();
 		this.lunaluainformation1.Events = ((global::Gdk.EventMask)(256));
 		this.lunaluainformation1.Name = "lunaluainformation1";
+		this.lunaluainformation1.wohlId = 0;
 		this.hpaned1.Add (this.lunaluainformation1);
 		this.notebook1.Add (this.hpaned1);
 		global::Gtk.Notebook.NotebookChild w10 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.hpaned1]));
@@ -166,5 +167,6 @@ public partial class MainWindow
 		this.quitAction.Activated += new global::System.EventHandler (this.OnClosed);
 		this.convertAction.Activated += new global::System.EventHandler (this.OnConvertActionActivated);
 		this.treeview1.CursorChanged += new global::System.EventHandler (this.treeview_SelectionChanged);
+		this.lunaLuaVersionsTree.CursorChanged += new global::System.EventHandler (this.OnLunaLuaVersionsTreeCursorChanged);
 	}
 }

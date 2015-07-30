@@ -24,6 +24,21 @@ namespace Gtktester
         public WohlVersion[] versions { get; set;}
 
         public WohlJsonObj(){}
+
+        public Version ReturnLatestVersion()
+        {
+            if (latest != null)
+            {
+                string[] split = latest.Split(new char[]{ ' ' });
+                for (int i = 0; i < split.Length; i++)
+                {
+                    if (split[i].Contains("."))
+                        return new Version(split[i].Trim());
+                }
+            }
+
+            return new Version("0.0.0.0");
+        }
     }
 }
 
