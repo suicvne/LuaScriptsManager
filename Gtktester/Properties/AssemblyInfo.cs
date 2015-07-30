@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription ("An application for managing modules in LunaLua.")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("Mike Santiago")]
-[assembly: AssemblyProduct ("LuaModuleManager")]
+[assembly: AssemblyProduct ("LunaLua Module Manager")]
 [assembly: AssemblyCopyright ("Mike")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]

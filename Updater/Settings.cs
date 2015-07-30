@@ -65,7 +65,7 @@ namespace Gtktester
                 {
                     Directory.CreateDirectory(ConfigDirectory);
                 }
-                catch(Exception ex)
+                catch
                 {
                     MessageDialog md = new MessageDialog(null, 
                         DialogFlags.Modal, 

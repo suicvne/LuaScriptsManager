@@ -6,6 +6,7 @@ using Gtk;
 using System.IO;
 using System.Net;
 using System.Diagnostics;
+using System.IO.Compression;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -53,7 +54,31 @@ public partial class MainWindow: Gtk.Window
 
         using (WebClient wc = new WebClient())
         {
-            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.exe"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
+            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.zip"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
+            using (ZipArchive archive = ZipFile.Open(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip", ZipArchiveMode.Read))
+            {
+                foreach (var entry in archive.Entries)
+                {
+                    try
+                    {
+                        entry.ExtractToFile(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + entry.FullName, true);
+                    }
+                    catch(System.IO.IOException ioex)
+                    {
+                        if (ioex.Message.Contains("another process"))
+                            Console.WriteLine("Skipping file");
+                    }
+                }
+            }
+
+            try
+            {
+                File.Delete(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Couldn't remove zip!\n{0}", ex.Message);
+            }
             Console.WriteLine("Done!");
             Process.Start(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
             this.Destroy();
