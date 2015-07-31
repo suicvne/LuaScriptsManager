@@ -154,6 +154,8 @@ namespace Gtktester
             if (LocalMetadata == null)
             {
                 this.descriptionLabel.Text = RemoteMetadata.Description + String.Format("\n\nAvailable: {0}", RemoteMetadata.ScriptVersion.ToString());
+                this.installUpdateButton.Sensitive = true;
+                this.webButton.Sensitive = true;
             }
             else
             {
