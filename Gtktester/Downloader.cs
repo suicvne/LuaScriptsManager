@@ -114,7 +114,7 @@ namespace Gtktester
                                 if(Program.ProgramSettings.EnableSilentBugReporting)
                                 {
                                     BugReporter br = new BugReporter();
-                                    br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while downloading LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                                    br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while downloading LunaLua\n\nUsername: {2}\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                                     br.Destroy();
                                 }
                             }
@@ -138,7 +138,7 @@ namespace Gtktester
                             {
                                 Console.WriteLine("ERROR: " + ex.Message);
                                 BugReporter br = new BugReporter();
-                                br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while download LunaLua\n\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                                br.SubmitSilentBugReport(String.Format("LunaLua Module Manager crashed while download LunaLua\n\nUsername: {2}\nMessage: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                                 br.Destroy();
                             }
                         }
@@ -189,7 +189,7 @@ namespace Gtktester
                     {
                         BugReporter br = new BugReporter();
                         br.SubmitSilentBugReport(String.Format("An error ocurred while downloading a file" +
-                            ": {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                            ": {0}\nUsername: {2}\nStack Trace: {1}", ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                         br.Destroy();
                     }
                 }

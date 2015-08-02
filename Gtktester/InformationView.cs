@@ -96,7 +96,7 @@ namespace Gtktester
                     if (Program.ProgramSettings.EnableSilentBugReporting)
                     {
                         BugReporter br = new BugReporter();
-                        br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the script: {0}\n\nStack Trace: {1}", ex.Message, ex.StackTrace));
+                        br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the script: {0}\nUsername: {2}\n\nStack Trace: {1}", ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                         br.Destroy();
                     }
                 }

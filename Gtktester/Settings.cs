@@ -25,6 +25,7 @@ namespace Gtktester
         public string WohlstandJSON { get; set;}
         public bool StartMaximized { get; set; }
         public bool EnableSilentBugReporting { get; set; }
+        public string OptionalUsername {get;set;}
 
         public Settings()
         {
@@ -59,6 +60,7 @@ namespace Gtktester
             LunaLuaDirectory = null;
             StartMaximized = false;
             EnableSilentBugReporting = true;
+            OptionalUsername = "";
         }
 
         private void CreateConfigDirectory()
@@ -85,7 +87,7 @@ namespace Gtktester
                     if (Program.ProgramSettings.EnableSilentBugReporting)
                     {
                         BugReporter br = new BugReporter();
-                        br.SubmitSilentBugReport(String.Format("An error ocurred while creating configuration directory at: {0}\nMessage: {1}\n\nStack Trace: {2}", ConfigDirectory, ex.Message, ex.StackTrace));
+                        br.SubmitSilentBugReport(String.Format("An error ocurred while creating configuration directory at: {0}\nUsername: {3}\nMessage: {1}\n\nStack Trace: {2}", ConfigDirectory, ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                         br.Destroy();
                     }
                 }

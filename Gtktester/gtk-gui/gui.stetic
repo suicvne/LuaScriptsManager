@@ -639,7 +639,7 @@ If you already have it, please select the directory it resides in.</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="Gtktester.SettingsUI" design-size="646 318">
+  <widget class="Gtk.Window" id="Gtktester.SettingsUI" design-size="666 332">
     <property name="MemberName" />
     <property name="Title" translatable="yes">LunaLua Module Manager - Settings</property>
     <property name="Icon">resource:Gtktester.Icons.PNG.32.png</property>
@@ -783,6 +783,18 @@ If you already have it, please select the directory it resides in.</property>
                     <property name="AutoSize">True</property>
                   </packing>
                 </child>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.HBox" id="hbox4">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
                 <child>
                   <widget class="Gtk.CheckButton" id="enableSilentBugReporting">
                     <property name="MemberName" />
@@ -801,9 +813,37 @@ In addition, a stack trace and error message will be sent. This is done automati
                     <property name="DrawIndicator">True</property>
                     <property name="HasLabel">True</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Toggled" handler="OnEnableSilentBugReportingToggled" />
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label2">
+                    <property name="MemberName" />
+                    <property name="Tooltip">A username (or real name) to attach alongside the bug report.
+
+You do NOT need an account anywhere to insert this value and it is completely optional.</property>
+                    <property name="LabelProp">Username: </property>
                   </widget>
                   <packing>
                     <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="optUsernameEntry">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
                     <property name="AutoSize">True</property>
                   </packing>
                 </child>
@@ -818,7 +858,7 @@ In addition, a stack trace and error message will be sent. This is done automati
                     <signal name="Clicked" handler="OnResetDatabaseBtnClicked" />
                   </widget>
                   <packing>
-                    <property name="Position">2</property>
+                    <property name="Position">3</property>
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
@@ -835,7 +875,7 @@ In addition, a stack trace and error message will be sent. This is done automati
                     <signal name="Clicked" handler="OnButton21Clicked" />
                   </widget>
                   <packing>
-                    <property name="Position">3</property>
+                    <property name="Position">4</property>
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
@@ -843,7 +883,7 @@ In addition, a stack trace and error message will be sent. This is done automati
                 </child>
               </widget>
               <packing>
-                <property name="Position">3</property>
+                <property name="Position">4</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>

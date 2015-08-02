@@ -22,6 +22,7 @@ namespace Gtktester
             databaseLocationEntry.Text = Program.ProgramSettings.DatabaseURL;
             startAppMaximizedCheck.Active = Program.ProgramSettings.StartMaximized;
             enableSilentBugReporting.Active = Program.ProgramSettings.EnableSilentBugReporting;
+            optUsernameEntry.Text = Program.ProgramSettings.OptionalUsername;
         }
 
         private int SaveSettings()
@@ -41,6 +42,7 @@ namespace Gtktester
             Program.ProgramSettings.LunaLuaDirectory = lunaLuaDirEntry.Text.Trim();
             Program.ProgramSettings.StartMaximized = startAppMaximizedCheck.Active;
             Program.ProgramSettings.EnableSilentBugReporting = enableSilentBugReporting.Active;
+            Program.ProgramSettings.OptionalUsername = optUsernameEntry.Text;
             if (!System.IO.Directory.Exists(lunaLuaDirEntry.Text + System.IO.Path.DirectorySeparatorChar + "LuaScriptsLib"))
             {
                 return -1;
@@ -112,6 +114,12 @@ namespace Gtktester
             {
                 lblLunaLuaVersion.Text = "";
             }
+        }
+
+        protected void OnEnableSilentBugReportingToggled (object sender, EventArgs e)
+        {
+            optUsernameEntry.Sensitive = enableSilentBugReporting.Active;
+            label2.Sensitive = enableSilentBugReporting.Active;
         }
     }
 }

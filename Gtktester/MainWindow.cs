@@ -64,7 +64,7 @@ public partial class MainWindow: Gtk.Window
             if (Program.ProgramSettings.EnableSilentBugReporting)
             {
                 BugReporter br = new BugReporter();
-                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nMessage: {1}\n\nStack Trace: {2}", Program.ProgramSettings.DatabaseURL, ex.Message, ex.StackTrace));
+                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nUsername: {3}\nMessage: {1}\n\nStack Trace: {2}", Program.ProgramSettings.DatabaseURL, ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                 br.Destroy();
             }
 
@@ -97,7 +97,7 @@ public partial class MainWindow: Gtk.Window
             if (Program.ProgramSettings.EnableSilentBugReporting)
             {
                 BugReporter br = new BugReporter();
-                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nMessage: {1}\nStack Trace: {2}", Program.ProgramSettings.WohlstandJSON, ex.Message, ex.StackTrace));
+                br.SubmitSilentBugReport(String.Format("An error ocurred while loading in the database from: {0}\nUsername: {3}\nMessage: {1}\nStack Trace: {2}", Program.ProgramSettings.WohlstandJSON, ex.Message, ex.StackTrace, Program.ProgramSettings.OptionalUsername));
                 br.Destroy();
             }
 
@@ -223,7 +223,6 @@ THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
     protected void OnPreferencesActionActivated (object sender, EventArgs e)
     {
         SettingsUI s = new SettingsUI();
-        s.Parent = this;
         s.Show();
     }
     protected void OnConvertActionActivated (object sender, EventArgs e)
