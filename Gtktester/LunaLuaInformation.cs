@@ -57,7 +57,6 @@ namespace Gtktester
                 {
                     CurLunaDllVer = new Version(fvi.FileVersion.ToString());
                     curLunaLuaVersion.Text = "Your Current LunaLua Version is: " + CurLunaDllVer.ToString();
-
                 }
                 else
                 {
@@ -65,6 +64,8 @@ namespace Gtktester
                     curLunaLuaVersion.Text = "Your Current LunaLua Version is: Outdated! No file metadata!";
                 }
             }
+            else
+                CurLunaDllVer = new Version("0.0.0.0");
         }
 
         /// <summary>
