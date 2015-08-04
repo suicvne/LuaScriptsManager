@@ -12,7 +12,16 @@ public partial class MainWindow: Gtk.Window
 {
     private List<LuaModuleManager.LuaModule> example = new List<LuaModuleManager.LuaModule>();
     public static WohlJsonObj wohl = new WohlJsonObj(); //risky..idc
-
+    private string[] SplashMessages = new string[]{"Finally out of beta!", 
+        "Better coded than SMBX!", 
+        "Also on Linux!", 
+        "Gtk Sucks!",
+    "Not written in C++!",
+    "Marina x Joey",
+        "<@Joey> also please don't say stuff like \"daddy touch my princess parts\"", "CS:STOP", "Should work most of the time!",
+        "Luigibot does what Reta don't ©",
+    "Json is fun!"};
+    private static Random r = new Random((int)DateTime.Now.Ticks);
 
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
@@ -39,7 +48,9 @@ public partial class MainWindow: Gtk.Window
 
     private void OnWindowLoad()
     {
-        this.Title = "LunaLua Module Manager - v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        string title = String.Format("LunaLua Module Manager - v{0} - {1}", Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+            SplashMessages[r.Next(SplashMessages.Length)]);
+        this.Title = title;
 
         try
         {
