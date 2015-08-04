@@ -160,7 +160,11 @@ namespace Gtktester
                                 //decimal curSpeed = decimal.Round((decimal)(sizeDiff / timeDiff) / 1000, 2, MidpointRounding.AwayFromZero);
                                 //speedLabel.Text = String.Format("{0} mb/s", curSpeed);
                                 //Console.WriteLine(Convert.ToDouble(Convert.ToDouble(e.ProgressPercentage + ".0") / Convert.ToDouble(100.0)));
-                                progressbar1.Fraction = Convert.ToDouble(Convert.ToDouble(e.ProgressPercentage + ".0") / Convert.ToDouble(100.0));
+                                try
+                                {
+                                    progressbar1.Fraction = Convert.ToDouble(Convert.ToDouble(e.ProgressPercentage + ".0") / Convert.ToDouble(100.0));
+                                }
+                                catch{progressbar1.Fraction = 0.0d;}
                                 progressbar1.Text = String.Format("{0} kb / {1} kb", (e.BytesReceived / 1024d).ToString("0.00"), (e.TotalBytesToReceive / 1024d).ToString("0.00"));
 
                                 //lastUpdateTime = now;
