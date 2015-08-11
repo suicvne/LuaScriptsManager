@@ -129,7 +129,7 @@ namespace Gtktester
                                 Directory.CreateDirectory(_extractTo);
                             try
                             {
-                                using(Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + System.IO.Path.DirectorySeparatorChar + "lunalua.zip"))
+                                using(Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + System.IO.Path.DirectorySeparatorChar + "lunalua.zip"))
                                 {
                                     zip.ExtractAll(_extractTo, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
                                 }
