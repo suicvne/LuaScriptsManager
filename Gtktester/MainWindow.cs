@@ -26,11 +26,24 @@ public partial class MainWindow: Gtk.Window
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
-        
+        try
+        {
         CheckForUpdatesProgress cfup = new CheckForUpdatesProgress(Assembly.GetExecutingAssembly().GetName().Version);
         cfup.Show();
         if (cfup.CheckForUpdates() == false)
             cfup.Destroy();
+        }
+        catch
+        {
+            MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, 
+                "Communication could not be established to our servers: you must be online to use the LunaLua Module Manager.\n\nPress ok so we can self destruct.");
+            md.Icon = Image.LoadFromResource("Gtktester.Icons.PNG.256.png").Pixbuf;
+            md.WindowPosition = WindowPosition.Center;
+            md.Run();
+            md.Destroy();
+            this.Destroy();
+            Environment.Exit(-5);
+        }
 
 		Build ();
 

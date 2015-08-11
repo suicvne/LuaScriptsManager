@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.IO.Compression;
+using Updater;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -37,15 +38,15 @@ public partial class MainWindow: Gtk.Window
 
     private bool CheckIfCurExe()
     {
-        return File.Exists(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
+        return File.Exists(Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
     }
 
     private void DownloadUpdate()
     {
         try
         {
-            File.Move(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe",
-                Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager_old.exe");
+            File.Move(Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe",
+                Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager_old.exe");
         }
         catch(IOException)
         {
@@ -54,14 +55,14 @@ public partial class MainWindow: Gtk.Window
 
         using (WebClient wc = new WebClient())
         {
-            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.zip"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
-            using (ZipArchive archive = ZipFile.Open(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip", ZipArchiveMode.Read))
+            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/LuaModuleManager.zip"), Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
+            using (ZipArchive archive = ZipFile.Open(Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip", ZipArchiveMode.Read))
             {
                 foreach (var entry in archive.Entries)
                 {
                     try
                     {
-                        entry.ExtractToFile(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + entry.FullName, true);
+                        entry.ExtractToFile(Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + entry.FullName, true);
                     }
                     catch(System.IO.IOException ioex)
                     {
@@ -73,14 +74,18 @@ public partial class MainWindow: Gtk.Window
 
             try
             {
-                File.Delete(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
+                File.Delete(Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.zip");
             }
             catch(Exception ex)
             {
                 Console.WriteLine("Couldn't remove zip!\n{0}", ex.Message);
             }
             Console.WriteLine("Done!");
-            Process.Start(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe");
+            Process p = new Process();
+            p.StartInfo.Verb = "runas";
+            p.StartInfo.Arguments = Environment.CurrentDirectory;
+            p.StartInfo.FileName = Program.ManagerDir + System.IO.Path.DirectorySeparatorChar + "LuaModuleManager.exe";
+            p.Start();
             this.Destroy();
             Environment.Exit(0);
         }

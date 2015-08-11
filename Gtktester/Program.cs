@@ -45,7 +45,11 @@ namespace Gtktester
             {
                 if (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Updater.exe"))
                 {
-                    File.Delete(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Updater.exe");
+                    try
+                    {
+                        File.Delete(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Updater.exe");
+                    }
+                    catch{}
                     Changelog cl = new Changelog();
                     cl.Show();
                 }

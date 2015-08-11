@@ -72,9 +72,9 @@ namespace Gtktester
                 else
                     extractTo = entry1.Text;
 
-                if (!Directory.Exists(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp"))
-                    Directory.CreateDirectory(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
-                Downloader d = new Downloader("http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1", Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip", true, extractTo);
+                if (!Directory.Exists(Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp"))
+                    Directory.CreateDirectory(Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
+                Downloader d = new Downloader("http://engine.wohlnet.ru/LunaLua/get.php?luaver=-1&installationType=Full&base=smbx13&fbase=1", Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + "\\lunalua.zip", true, extractTo);
                 d.BeginDownload();
 
                 entry1.Text = extractTo;

@@ -4,6 +4,7 @@
 using System;
 using System.Net;
 using System.Diagnostics;
+using System.Security.Permissions;
 
 namespace Gtktester
 {
@@ -29,9 +30,7 @@ namespace Gtktester
                     if (LatestVersion > CurrentVersion)
                     {
                         label1.Text = "Downloading updater..";
-                        wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/Updater.exe"), Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Updater.exe");
-                        Process.Start(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Updater.exe", "-force");
-                        Environment.Exit(1);
+                        DownloadUpdater(wc);
                     }
                     else
                         return false;
@@ -42,6 +41,17 @@ namespace Gtktester
             return false;
         }
 
+
+        private void DownloadUpdater(WebClient wc)
+        {
+            wc.DownloadFile(new Uri("http://mrmiketheripper.x10.mx/luamodulemanager/Updater.exe"), Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "Updater.exe");
+            Process p = new Process();
+            p.StartInfo.Verb = "runas";
+            p.StartInfo.Arguments = "\"" + Environment.CurrentDirectory + "\"";
+            p.StartInfo.FileName = Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "Updater.exe";
+            p.Start();
+            Environment.Exit(1);
+        }
     }
 }
 

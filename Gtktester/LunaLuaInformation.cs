@@ -73,11 +73,11 @@ namespace Gtktester
         /// </summary>
         public void UpdateLunaLua()
         {
-            if (!Directory.Exists(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp"))
-                Directory.CreateDirectory(Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
+            if (!Directory.Exists(Program.ProgramSettings.ConfigDirectory+ System.IO.Path.DirectorySeparatorChar + "temp"))
+                Directory.CreateDirectory(Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp");
 
             string url = String.Format("http://engine.wohlnet.ru/LunaLua/get.php?luaver={0}&installationType=Update&base=smbx13&fbase=1", wohlId);
-            Downloader d = new Downloader(url, Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + System.IO.Path.DirectorySeparatorChar + "lunalua.zip", true, Program.ProgramSettings.LunaLuaDirectory);
+            Downloader d = new Downloader(url, Program.ProgramSettings.ConfigDirectory + System.IO.Path.DirectorySeparatorChar + "temp" + System.IO.Path.DirectorySeparatorChar + "lunalua.zip", true, Program.ProgramSettings.LunaLuaDirectory);
             d.BeginDownload();
             d.Destroyed += (object sender, EventArgs e) => {RefreshView();};
         }

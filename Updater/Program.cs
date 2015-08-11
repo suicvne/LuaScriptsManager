@@ -11,14 +11,18 @@ using System.Reflection;
 
 namespace Updater
 {
-    class MainClass
+    public class Program
     {
+        public static string ManagerDir = "";
         public static void Main(string[] args)
         {
             Gtktester.Settings filler = new Gtktester.Settings();
 
             if(Internals.CurrentOS == InternalOperatingSystem.Windows)
                 CheckWindowsGtk();
+
+            if (args.Length > 0)
+                ManagerDir = args[0].Trim('"');
 
             Application.Init();
             MainWindow win = new MainWindow();
