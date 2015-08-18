@@ -71,8 +71,8 @@ public partial class MainWindow: Gtk.Window
             {
                 string jsonDatabase = client.DownloadString("http://mrmiketheripper.x10.mx/luamodulemanager/test.json");
 
-                if (jsonDatabase != null)
-                    example = JsonConvert.DeserializeObject<List<LuaModuleManager.LuaModule>>(jsonDatabase);
+                //if (jsonDatabase != null)
+                    //example = JsonConvert.DeserializeObject<List<LuaModuleManager.LuaModule>>(jsonDatabase);
                 LoadDatabaseIntoTreeview();
             }
         }
