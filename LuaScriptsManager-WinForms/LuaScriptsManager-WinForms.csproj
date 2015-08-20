@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LuaScriptsManager-WinForms">
+      <HintPath>obj\Debug\LuaScriptsManager-WinForms.exe</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -51,6 +54,12 @@
     <Compile Include="LuaModule.cs" />
     <Compile Include="LuaModules.cs" />
     <Compile Include="LuaScriptMetadata.cs" />
+    <Compile Include="LunaLuaInformationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LunaLuaInformationView.Designer.cs">
+      <DependentUpon>LunaLuaInformationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +82,9 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="Wohlhabend-Networks\WohlVersion.cs" />
+    <EmbeddedResource Include="LunaLuaInformationView.resx">
+      <DependentUpon>LunaLuaInformationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

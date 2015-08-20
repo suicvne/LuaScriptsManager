@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WohlhabendNetworks;
 
@@ -18,7 +19,7 @@ namespace LuaScriptsManager_WinForms
     public partial class MainWindow : Form
     {
         private List<LuaModule> AvailableModulesList = new List<LuaModule>();
-        public static WohlJsonObj wohl = new WohlJsonObj(); //risky..idc
+        public static WohlJsonObj LunaLuaVersions = new WohlJsonObj(); //risky..idc
         private string[] SplashMessages = new string[]{"Finally out of beta!",
         "Better coded than SMBX!",
         "Also on Linux!",
@@ -71,8 +72,7 @@ namespace LuaScriptsManager_WinForms
                         availModulesListView.Items.Add(lvi);
                     }
                 }
-                if (LoadingDone != null)
-                    LoadingDone(this);
+                LoadLunaLuaDatabase();
             }
             catch(Exception ex)
             {
@@ -91,6 +91,33 @@ namespace LuaScriptsManager_WinForms
                 var match = AvailableModulesList.FirstOrDefault(x => x.ScriptName.Equals(availModulesListView.SelectedItems[0].Text));
                 luaScriptInformationView1.SetAllData(match);
             }
+        }
+
+        private void LoadLunaLuaDatabase()
+        {
+            using (WebClient wc = new WebClient())
+            {
+                string json = wc.DownloadString("http://engine.wohlnet.ru/LunaLua/get.php?showversions");
+                if(json != null)
+                {
+                    LunaLuaVersions = JsonConvert.DeserializeObject<WohlJsonObj>(json);
+                    foreach(var version in LunaLuaVersions.versions)
+                    {
+                        Regex matchVersion = new Regex(@"\d+(\.\d+)+");
+                        Match m = matchVersion.Match(version.version);
+                        if(new Version(m.Value) == LunaLuaVersions.ReturnLatestVersion())
+                            lunaLuaVersionsList.Items.Add(new ListViewItem { Text = version.version + " (Latest)" });
+                        else
+                            lunaLuaVersionsList.Items.Add(new ListViewItem { Text = version.version });
+                    }
+                }
+                //TODO: Check latest version
+            }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

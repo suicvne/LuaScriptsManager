@@ -43,13 +43,22 @@
             this.availModulesListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lunaLuaVersionsList = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.luaScriptInformationView1 = new LuaScriptsManager_WinForms.LuaScriptInformationView();
+            this.lunaLuaInformationView1 = new LuaScriptsManager_WinForms.LunaLuaInformationView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -101,7 +110,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(787, 387);
+            this.tabControl1.Size = new System.Drawing.Size(787, 408);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -110,7 +119,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(779, 361);
+            this.tabPage1.Size = new System.Drawing.Size(779, 382);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "LunaLua Scripts";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -128,7 +137,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.luaScriptInformationView1);
-            this.splitContainer1.Size = new System.Drawing.Size(773, 355);
+            this.splitContainer1.Size = new System.Drawing.Size(773, 376);
             this.splitContainer1.SplitterDistance = 246;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -141,7 +150,7 @@
             this.availModulesListView.Location = new System.Drawing.Point(0, 0);
             this.availModulesListView.MultiSelect = false;
             this.availModulesListView.Name = "availModulesListView";
-            this.availModulesListView.Size = new System.Drawing.Size(246, 355);
+            this.availModulesListView.Size = new System.Drawing.Size(246, 376);
             this.availModulesListView.TabIndex = 0;
             this.availModulesListView.UseCompatibleStateImageBehavior = false;
             this.availModulesListView.View = System.Windows.Forms.View.Details;
@@ -154,39 +163,88 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.splitContainer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(779, 0);
+            this.tabPage2.Size = new System.Drawing.Size(779, 382);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LunaLua";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lunaLuaVersionsList);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.lunaLuaInformationView1);
+            this.splitContainer2.Size = new System.Drawing.Size(773, 376);
+            this.splitContainer2.SplitterDistance = 257;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // lunaLuaVersionsList
+            // 
+            this.lunaLuaVersionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.lunaLuaVersionsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lunaLuaVersionsList.Location = new System.Drawing.Point(0, 0);
+            this.lunaLuaVersionsList.Name = "lunaLuaVersionsList";
+            this.lunaLuaVersionsList.Size = new System.Drawing.Size(257, 376);
+            this.lunaLuaVersionsList.TabIndex = 0;
+            this.lunaLuaVersionsList.UseCompatibleStateImageBehavior = false;
+            this.lunaLuaVersionsList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "LunaLua Versions";
+            this.columnHeader2.Width = 225;
             // 
             // luaScriptInformationView1
             // 
             this.luaScriptInformationView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.luaScriptInformationView1.Location = new System.Drawing.Point(0, 0);
             this.luaScriptInformationView1.Name = "luaScriptInformationView1";
-            this.luaScriptInformationView1.Size = new System.Drawing.Size(523, 355);
+            this.luaScriptInformationView1.Size = new System.Drawing.Size(523, 376);
             this.luaScriptInformationView1.TabIndex = 0;
+            // 
+            // lunaLuaInformationView1
+            // 
+            this.lunaLuaInformationView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lunaLuaInformationView1.Location = new System.Drawing.Point(0, 0);
+            this.lunaLuaInformationView1.Name = "lunaLuaInformationView1";
+            this.lunaLuaInformationView1.Size = new System.Drawing.Size(512, 376);
+            this.lunaLuaInformationView1.TabIndex = 0;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 387);
+            this.ClientSize = new System.Drawing.Size(787, 408);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainMenu1;
             this.MinimumSize = new System.Drawing.Size(803, 446);
             this.Name = "MainWindow";
             this.Text = "LunaLua Module Manager";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,6 +265,10 @@
         private System.Windows.Forms.ListView availModulesListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private LuaScriptInformationView luaScriptInformationView1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ListView lunaLuaVersionsList;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private LunaLuaInformationView lunaLuaInformationView1;
     }
 }
 

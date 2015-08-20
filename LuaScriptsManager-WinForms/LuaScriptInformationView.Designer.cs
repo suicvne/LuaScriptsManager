@@ -100,6 +100,7 @@
             // 
             // websiteButton
             // 
+            this.websiteButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.websiteButton.Location = new System.Drawing.Point(86, 3);
             this.websiteButton.Name = "websiteButton";
             this.websiteButton.Size = new System.Drawing.Size(104, 23);
@@ -110,6 +111,7 @@
             // 
             // installButton
             // 
+            this.installButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.installButton.Location = new System.Drawing.Point(5, 3);
             this.installButton.Name = "installButton";
             this.installButton.Size = new System.Drawing.Size(75, 23);
