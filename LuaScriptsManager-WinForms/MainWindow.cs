@@ -30,7 +30,8 @@ namespace LuaScriptsManager_WinForms
         "Luigibot does what Reta don't ©",
     "Json is fun!"};
         private static Random r = new Random((int)DateTime.Now.Ticks);
-        public event LoadingComplete LoadingDone;
+        public event LoadingComplete 
+            LoadingDone;
 
         public MainWindow()
         { 
@@ -98,14 +99,14 @@ namespace LuaScriptsManager_WinForms
             using (WebClient wc = new WebClient())
             {
                 string json = wc.DownloadString("http://engine.wohlnet.ru/LunaLua/get.php?showversions");
-                if(json != null)
+                if (json != null)
                 {
                     LunaLuaVersions = JsonConvert.DeserializeObject<WohlJsonObj>(json);
-                    foreach(var version in LunaLuaVersions.versions)
+                    foreach (var version in LunaLuaVersions.versions)
                     {
                         Regex matchVersion = new Regex(@"\d+(\.\d+)+");
                         Match m = matchVersion.Match(version.version);
-                        if(new Version(m.Value) == LunaLuaVersions.ReturnLatestVersion())
+                        if (new Version(m.Value) == LunaLuaVersions.ReturnLatestVersion())
                             lunaLuaVersionsList.Items.Add(new ListViewItem { Text = version.version + " (Latest)" });
                         else
                             lunaLuaVersionsList.Items.Add(new ListViewItem { Text = version.version });
@@ -114,10 +115,10 @@ namespace LuaScriptsManager_WinForms
                 //TODO: Check latest version
             }
         }
-
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Program.SaveSettings();
+            Environment.Exit(0);
         }
     }
 }
