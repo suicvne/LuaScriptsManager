@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaModuleManager", "Gtktester\LuaModuleManager.csproj", "{BE45C93C-596F-4923-A781-6899FB32C895}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{034F7C7F-E220-4885-AAAF-19DE6C568413}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaScriptsManager-WinForms", "LuaScriptsManager-WinForms\LuaScriptsManager-WinForms.csproj", "{3F857A9D-DF5E-41E4-A51E-D2B65FC3E0A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunaLuaModuleManager", "LuaScriptsManager-WinForms\LunaLuaModuleManager.csproj", "{3F857A9D-DF5E-41E4-A51E-D2B65FC3E0A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,18 +13,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Debug|x86.ActiveCfg = Debug|x86
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Debug|x86.Build.0 = Debug|x86
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Release|Any CPU.ActiveCfg = Release|x86
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Release|x86.ActiveCfg = Release|x86
-		{BE45C93C-596F-4923-A781-6899FB32C895}.Release|x86.Build.0 = Release|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Debug|x86.ActiveCfg = Debug|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Debug|x86.Build.0 = Debug|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Release|Any CPU.ActiveCfg = Release|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Release|x86.ActiveCfg = Release|x86
-		{034F7C7F-E220-4885-AAAF-19DE6C568413}.Release|x86.Build.0 = Release|x86
 		{3F857A9D-DF5E-41E4-A51E-D2B65FC3E0A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F857A9D-DF5E-41E4-A51E-D2B65FC3E0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F857A9D-DF5E-41E4-A51E-D2B65FC3E0A9}.Debug|x86.ActiveCfg = Debug|Any CPU
